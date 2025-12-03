@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roadmap - Friday V2</title>
+  <meta name="description" content="See what's coming next for Friday V2. Our product roadmap and upcoming features.">
+  <link rel="icon" type="image/png" href="iconfriday.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #000000;
+      --bg-secondary: #030305;
+      --bg-card: #0a0a0e;
+      --border: #1a1a24;
+      --text-primary: #ffffff;
+      --text-secondary: #a1a1aa;
+      --royal: #2563eb;
+      --royal-light: #3b82f6;
+      --green: #10b981;
+      --yellow: #eab308;
+      --purple: #8b5cf6;
+      --orange: #f97316;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      z-index: 100;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .logo img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+
+    .back-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--royal-light);
+    }
+
+    .page-content {
+      padding: 80px 0;
+    }
+
+    .page-content h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 18px;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .roadmap-section {
+      margin-bottom: 56px;
+    }
+
+    .roadmap-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .roadmap-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .roadmap-status.completed {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .roadmap-status.in-progress {
+      background: rgba(37, 99, 235, 0.15);
+      color: var(--royal-light);
+      border: 1px solid rgba(37, 99, 235, 0.3);
+    }
+
+    .roadmap-status.planned {
+      background: rgba(139, 92, 246, 0.15);
+      color: var(--purple);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+
+    .roadmap-status.exploring {
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--orange);
+      border: 1px solid rgba(249, 115, 22, 0.3);
+    }
+
+    .roadmap-status svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .roadmap-title {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .feature-cards {
+      display: grid;
+      gap: 16px;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: border-color 0.2s;
+    }
+
+    .feature-card:hover {
+      border-color: var(--border-hover, #2a2a38);
+    }
+
+    .feature-card h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .feature-card h4 svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--royal-light);
+    }
+
+    .feature-card p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    .feature-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      background: var(--bg-secondary);
+      border-radius: 4px;
+      font-size: 11px;
+      color: var(--text-secondary);
+      margin-top: 12px;
+    }
+
+    .vote-section {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      border-radius: 16px;
+      padding: 32px;
+      margin: 56px 0;
+      text-align: center;
+    }
+
+    .vote-section h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .vote-section p {
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .vote-section a {
+      display: inline-block;
+      background: var(--royal);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .vote-section a:hover {
+      background: var(--royal-light);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    footer p {
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--royal-light);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="iconfriday.png" alt="Friday V2">
+        <span>Friday V2</span>
+      </a>
+      <a href="/" class="back-link">Back to Home</a>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="container">
+      <h1>Roadmap</h1>
+      <p class="subtitle">See what we're working on and what's coming next</p>
+
+      <!-- Completed -->
+      <div class="roadmap-section">
+        <div class="roadmap-header">
+          <span class="roadmap-status completed">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Completed
+          </span>
+          <span class="roadmap-title">v1.0 Launch</span>
+        </div>
+        <div class="feature-cards">
+          <div class="feature-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+              AI-Powered Classification
+            </h4>
+            <p>Machine learning models that understand file content and automatically categorize your files.</p>
+          </div>
+          <div class="feature-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 3h18v18H3zM12 8v8M8 12h8"/>
+              </svg>
+              Smart Organization
+            </h4>
+            <p>Automatically create folder structures and move files to their appropriate locations.</p>
+          </div>
+          <div class="feature-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="1 4 1 10 7 10"/>
+                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+              </svg>
+              Full Undo History
+            </h4>
+            <p>Complete history of all actions with the ability to undo any change at any time.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- In Progress -->
+      <div class="roadmap-section">
+        <div class="roadmap-header">
+          <span class="roadmap-status in-progress">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            In Progress
+          </span>
+          <span class="roadmap-title">v1.1</span>
+        </div>
+        <div class="feature-cards">
+          <div class="feature-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <line x1="3" y1="9" x2="21" y2="9"/>
+                <line x1="9" y1="21" x2="9" y2="9"/>
+              </svg>
+              Batch Operations
+            </h4>
+            <p>Select multiple folders and organize them all at once with consistent rules.</p>
+            <span class="feature-tag">Coming in v1.1</span>
+          </div>
+          <div class="feature-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              Advanced Search
+            </h4>
+            <p>Search across organized files with filters for date, type, size, and custom tags.</p>
+            <span class="feature-tag">Coming in v1.1</span>
+          </div>
+          <div class="feature-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              </svg>
+              Organization Templates
+            </h4>
+            <p>Pre-built templates for common use cases: photographers, developers, students, etc.</p>
+            <span class="feature-tag">Coming in v1.1</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Planned -->
+      <div class="roadmap-section">
+        <div class="roadmap-header">
+          <span class="roadmap-status planned">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            Planned
+          </span>
+          <span class="roadmap-title">v1.2+</span>
+        </div>
+        <div class="feature-cards">
+          <div class="feature-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+              Team Sharing
+            </h4>
+            <p>Share organization rules and templates with your team for consistent file management.</p>
+          </div>
+          <div class="feature-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+              Windows Version
+            </h4>
+            <p>Bring Friday V2's organization power to Windows users.</p>
+          </div>
+          <div class="feature-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              </svg>
+              API & Integrations
+            </h4>
+            <p>Connect Friday V2 with other tools like Notion, Slack, and automation platforms.</p>
+          </div>
+          <div class="feature-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+              </svg>
+              Smart Tagging
+            </h4>
+            <p>AI-generated tags for easier searching and filtering of your organized files.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exploring -->
+      <div class="roadmap-section">
+        <div class="roadmap-header">
+          <span class="roadmap-status exploring">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            Exploring
+          </span>
+          <span class="roadmap-title">Future Ideas</span>
+        </div>
+        <div class="feature-cards">
+          <div class="feature-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Cloud Backup Integration
+            </h4>
+            <p>Optional encrypted backup of organization rules and history to your preferred cloud.</p>
+          </div>
+          <div class="feature-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                <line x1="12" y1="18" x2="12.01" y2="18"/>
+              </svg>
+              iOS Companion App
+            </h4>
+            <p>View and manage your organized files from your iPhone or iPad.</p>
+          </div>
+          <div class="feature-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+              Natural Language Commands
+            </h4>
+            <p>"Move all screenshots from last week to Archive" - organize with plain English.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="vote-section">
+        <h3>Have a Feature Request?</h3>
+        <p>We'd love to hear your ideas! Let us know what features you'd like to see in Friday V2.</p>
+        <a href="mailto:feedback@usefriday.app">Submit Feedback</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Friday V2. All rights reserved. | <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Changelog - Friday V2</title>
+  <meta name="description" content="See what's new in Friday V2. Release notes and version history.">
+  <link rel="icon" type="image/png" href="iconfriday.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #000000;
+      --bg-secondary: #030305;
+      --bg-card: #0a0a0e;
+      --border: #1a1a24;
+      --text-primary: #ffffff;
+      --text-secondary: #a1a1aa;
+      --royal: #2563eb;
+      --royal-light: #3b82f6;
+      --green: #10b981;
+      --yellow: #eab308;
+      --purple: #8b5cf6;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      z-index: 100;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .logo img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+
+    .back-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--royal-light);
+    }
+
+    .page-content {
+      padding: 80px 0;
+    }
+
+    .page-content h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 18px;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .release {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .release:last-of-type {
+      border-bottom: none;
+    }
+
+    .release-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .release-version {
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .release-tag {
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .release-tag.latest {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .release-tag.beta {
+      background: rgba(139, 92, 246, 0.15);
+      color: var(--purple);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+
+    .release-date {
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    .release-section {
+      margin-top: 24px;
+    }
+
+    .release-section h3 {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .release-section h3.new {
+      color: var(--green);
+    }
+
+    .release-section h3.improved {
+      color: var(--royal-light);
+    }
+
+    .release-section h3.fixed {
+      color: var(--yellow);
+    }
+
+    .release-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .release-section li {
+      color: var(--text-secondary);
+      padding: 8px 0;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .release-section li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 16px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--border);
+    }
+
+    .release-section.new li::before {
+      background: var(--green);
+    }
+
+    .release-section.improved li::before {
+      background: var(--royal-light);
+    }
+
+    .release-section.fixed li::before {
+      background: var(--yellow);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    footer p {
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--royal-light);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="iconfriday.png" alt="Friday V2">
+        <span>Friday V2</span>
+      </a>
+      <a href="/" class="back-link">Back to Home</a>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="container">
+      <h1>Changelog</h1>
+      <p class="subtitle">See what's new in each version of Friday V2</p>
+
+      <!-- Version 1.0.0 -->
+      <div class="release">
+        <div class="release-header">
+          <span class="release-version">v1.0.0</span>
+          <span class="release-tag latest">Latest</span>
+          <span class="release-date">December 3, 2024</span>
+        </div>
+
+        <p style="color: var(--text-secondary); margin-bottom: 20px;">
+          The first public release of Friday V2! We're excited to bring AI-powered file organization to your Mac.
+        </p>
+
+        <div class="release-section new">
+          <h3 class="new">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            New Features
+          </h3>
+          <ul>
+            <li>AI-powered file classification using on-device machine learning</li>
+            <li>Smart folder creation based on file content analysis</li>
+            <li>Duplicate file detection and management</li>
+            <li>Custom organization rules with pattern matching</li>
+            <li>Full undo history for all organization actions</li>
+            <li>Preview mode to see changes before applying</li>
+            <li>Scheduled automatic organization</li>
+            <li>Finder extension for right-click organization</li>
+            <li>Dark mode support</li>
+            <li>Keyboard shortcuts for power users</li>
+          </ul>
+        </div>
+
+        <div class="release-section">
+          <h3>System Requirements</h3>
+          <ul>
+            <li>macOS 12 Monterey or later</li>
+            <li>Apple Silicon or Intel Mac</li>
+            <li>500 MB available storage</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Beta versions -->
+      <div class="release">
+        <div class="release-header">
+          <span class="release-version">v0.9.0 Beta</span>
+          <span class="release-tag beta">Beta</span>
+          <span class="release-date">November 15, 2024</span>
+        </div>
+
+        <div class="release-section new">
+          <h3 class="new">New</h3>
+          <ul>
+            <li>Added scheduled cleanup feature</li>
+            <li>Finder extension for right-click access</li>
+            <li>Export/import organization rules</li>
+          </ul>
+        </div>
+
+        <div class="release-section improved">
+          <h3 class="improved">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+            </svg>
+            Improved
+          </h3>
+          <ul>
+            <li>50% faster file scanning performance</li>
+            <li>Better classification accuracy for code files</li>
+            <li>Improved handling of large folders (10,000+ files)</li>
+          </ul>
+        </div>
+
+        <div class="release-section fixed">
+          <h3 class="fixed">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            Fixed
+          </h3>
+          <ul>
+            <li>Fixed crash when organizing folders with special characters</li>
+            <li>Fixed undo not working for renamed files</li>
+            <li>Fixed memory leak during long organization sessions</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="release">
+        <div class="release-header">
+          <span class="release-version">v0.8.0 Beta</span>
+          <span class="release-tag beta">Beta</span>
+          <span class="release-date">October 28, 2024</span>
+        </div>
+
+        <div class="release-section new">
+          <h3 class="new">New</h3>
+          <ul>
+            <li>Custom organization rules</li>
+            <li>Duplicate file detection</li>
+            <li>Dark mode support</li>
+          </ul>
+        </div>
+
+        <div class="release-section improved">
+          <h3 class="improved">Improved</h3>
+          <ul>
+            <li>Redesigned user interface</li>
+            <li>Better error messages</li>
+            <li>Improved file type detection</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="release">
+        <div class="release-header">
+          <span class="release-version">v0.5.0 Alpha</span>
+          <span class="release-tag beta">Alpha</span>
+          <span class="release-date">September 10, 2024</span>
+        </div>
+
+        <div class="release-section new">
+          <h3 class="new">New</h3>
+          <ul>
+            <li>Initial alpha release</li>
+            <li>Basic AI classification</li>
+            <li>Simple folder organization</li>
+            <li>Undo functionality</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Friday V2. All rights reserved. | <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a></p>
+    </div>
+  </footer>
+</body>
+</html>

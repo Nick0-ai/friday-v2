@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation - Friday V2</title>
+  <meta name="description" content="Learn how to use Friday V2 to automatically organize your files with AI.">
+  <link rel="icon" type="image/png" href="iconfriday.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #000000;
+      --bg-secondary: #030305;
+      --bg-card: #0a0a0e;
+      --border: #1a1a24;
+      --text-primary: #ffffff;
+      --text-secondary: #a1a1aa;
+      --royal: #2563eb;
+      --royal-light: #3b82f6;
+      --green: #10b981;
+      --yellow: #eab308;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      z-index: 100;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .logo img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+
+    .back-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--royal-light);
+    }
+
+    .page-content {
+      padding: 80px 0;
+    }
+
+    .page-content h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 18px;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-content h2 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-top: 56px;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+
+    .page-content h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+
+    .page-content p {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    .page-content ul, .page-content ol {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+
+    .page-content li {
+      margin-bottom: 8px;
+    }
+
+    .page-content strong {
+      color: var(--text-primary);
+    }
+
+    .page-content code {
+      font-family: 'JetBrains Mono', monospace;
+      background: var(--bg-card);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--royal-light);
+    }
+
+    .step-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 20px 0;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--royal) 0%, var(--royal-light) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .step-content h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .step-content p {
+      margin-bottom: 0;
+      font-size: 15px;
+    }
+
+    .tip-box {
+      background: rgba(234, 179, 8, 0.1);
+      border: 1px solid rgba(234, 179, 8, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 24px 0;
+    }
+
+    .tip-box h4 {
+      color: var(--yellow);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tip-box p {
+      margin-bottom: 0;
+      font-size: 14px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .feature-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .feature-item h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .feature-item h4 svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--green);
+    }
+
+    .feature-item p {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .toc {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 48px;
+    }
+
+    .toc h3 {
+      font-size: 16px;
+      margin-bottom: 16px;
+      margin-top: 0;
+    }
+
+    .toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toc li {
+      margin-bottom: 8px;
+    }
+
+    .toc a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .toc a:hover {
+      color: var(--royal-light);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    footer p {
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--royal-light);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="iconfriday.png" alt="Friday V2">
+        <span>Friday V2</span>
+      </a>
+      <a href="/" class="back-link">Back to Home</a>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="container">
+      <h1>Documentation</h1>
+      <p class="subtitle">Everything you need to get started with Friday V2</p>
+
+      <div class="toc">
+        <h3>Table of Contents</h3>
+        <ul>
+          <li><a href="#getting-started">Getting Started</a></li>
+          <li><a href="#first-organization">Your First Organization</a></li>
+          <li><a href="#features">Features Overview</a></li>
+          <li><a href="#custom-rules">Custom Rules</a></li>
+          <li><a href="#undo">Undo & History</a></li>
+          <li><a href="#keyboard-shortcuts">Keyboard Shortcuts</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <h2 id="getting-started">Getting Started</h2>
+      <p>Welcome to Friday V2! Follow these steps to install and set up the app.</p>
+
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h4>Download Friday V2</h4>
+          <p>Download the latest version from our website. The app is a standard .dmg file for macOS.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h4>Install the App</h4>
+          <p>Open the .dmg file and drag Friday V2 to your Applications folder.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h4>Launch Friday V2</h4>
+          <p>Open Friday V2 from your Applications folder. On first launch, you may need to right-click and select "Open" to bypass Gatekeeper.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h4>Grant Permissions</h4>
+          <p>Friday V2 will ask for permission to access your files. Select the folders you want to organize.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <h4>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="16" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12.01" y2="8"/>
+          </svg>
+          Tip
+        </h4>
+        <p>Start with a single folder like your Downloads or Desktop to get familiar with how Friday V2 works before organizing larger directories.</p>
+      </div>
+
+      <h2 id="first-organization">Your First Organization</h2>
+      <p>Let's organize your first folder with Friday V2.</p>
+
+      <h3>Step 1: Select a Folder</h3>
+      <p>Click the <strong>"Add Folder"</strong> button or drag a folder into the Friday V2 window. We recommend starting with your Downloads folder.</p>
+
+      <h3>Step 2: Analyze</h3>
+      <p>Friday V2 will scan the folder and analyze each file. You'll see a preview of:</p>
+      <ul>
+        <li>Number of files found</li>
+        <li>Proposed categories</li>
+        <li>Suggested folder structure</li>
+      </ul>
+
+      <h3>Step 3: Review</h3>
+      <p>Before any files are moved, you can review the proposed organization. Click on any category to see which files will be moved there.</p>
+
+      <h3>Step 4: Organize</h3>
+      <p>Click <strong>"Organize"</strong> to apply the changes. Friday V2 will move files into their new folders.</p>
+
+      <h3>Step 5: Done!</h3>
+      <p>Your files are now organized. You can undo any changes at any time from the History panel.</p>
+
+      <h2 id="features">Features Overview</h2>
+
+      <div class="feature-grid">
+        <div class="feature-item">
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Smart Classification
+          </h4>
+          <p>AI-powered categorization based on file content, not just extensions.</p>
+        </div>
+
+        <div class="feature-item">
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Preview Mode
+          </h4>
+          <p>See exactly what will happen before any files are moved.</p>
+        </div>
+
+        <div class="feature-item">
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Custom Rules
+          </h4>
+          <p>Create your own organization rules and categories.</p>
+        </div>
+
+        <div class="feature-item">
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Duplicate Detection
+          </h4>
+          <p>Find and manage duplicate files across your system.</p>
+        </div>
+
+        <div class="feature-item">
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Undo History
+          </h4>
+          <p>Full history of all actions with one-click undo.</p>
+        </div>
+
+        <div class="feature-item">
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Scheduled Cleanup
+          </h4>
+          <p>Set up automatic organization on a schedule.</p>
+        </div>
+      </div>
+
+      <h2 id="custom-rules">Custom Rules</h2>
+      <p>Create custom rules to organize files exactly how you want.</p>
+
+      <h3>Creating a Rule</h3>
+      <ol>
+        <li>Go to <strong>Settings → Rules</strong></li>
+        <li>Click <strong>"New Rule"</strong></li>
+        <li>Set your conditions (file type, name pattern, date, size)</li>
+        <li>Choose the destination folder</li>
+        <li>Save the rule</li>
+      </ol>
+
+      <h3>Example Rules</h3>
+      <ul>
+        <li><strong>Screenshots to Screenshots folder:</strong> Files matching <code>Screenshot*.png</code> → Screenshots/</li>
+        <li><strong>Old downloads cleanup:</strong> Files older than 30 days → Archive/</li>
+        <li><strong>Large videos:</strong> Videos larger than 1GB → Videos/Large/</li>
+      </ul>
+
+      <h2 id="undo">Undo & History</h2>
+      <p>Friday V2 keeps a complete history of all organization actions.</p>
+
+      <h3>Undo Last Action</h3>
+      <p>Press <code>Cmd + Z</code> or click the Undo button to reverse the last organization.</p>
+
+      <h3>View History</h3>
+      <p>Open the History panel to see all past actions. You can:</p>
+      <ul>
+        <li>View details of each organization session</li>
+        <li>Undo any specific action</li>
+        <li>Restore files to their original locations</li>
+      </ul>
+
+      <h2 id="keyboard-shortcuts">Keyboard Shortcuts</h2>
+      <ul>
+        <li><code>Cmd + O</code> - Add folder</li>
+        <li><code>Cmd + Enter</code> - Start organization</li>
+        <li><code>Cmd + Z</code> - Undo last action</li>
+        <li><code>Cmd + Shift + Z</code> - Redo</li>
+        <li><code>Cmd + ,</code> - Open settings</li>
+        <li><code>Cmd + H</code> - Show history</li>
+        <li><code>Space</code> - Preview selected file</li>
+      </ul>
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+
+      <h3>Is my data safe?</h3>
+      <p>Yes! Friday V2 operates 100% locally on your Mac. No files are ever uploaded to any server. See our <a href="/security.html">Security page</a> for details.</p>
+
+      <h3>Can I undo changes?</h3>
+      <p>Absolutely. Every action is recorded in the history and can be undone at any time.</p>
+
+      <h3>What file types are supported?</h3>
+      <p>Friday V2 can organize any file type. It has enhanced intelligence for documents, images, videos, audio, code, and archives.</p>
+
+      <h3>Does it work with cloud folders?</h3>
+      <p>Yes, Friday V2 works with iCloud Drive, Dropbox, Google Drive, and other cloud storage folders that are synced to your Mac.</p>
+
+      <h3>How do I exclude files?</h3>
+      <p>You can add files or patterns to the exclusion list in Settings. You can also hold <code>Option</code> while organizing to manually exclude files.</p>
+
+      <h2>Need Help?</h2>
+      <p>If you have questions not covered here, contact us at <strong>support@usefriday.app</strong></p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Friday V2. All rights reserved. | <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a></p>
+    </div>
+  </footer>
+</body>
+</html>

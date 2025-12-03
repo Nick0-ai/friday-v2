@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security - Friday V2</title>
+  <meta name="description" content="Learn about Friday V2's security practices and how we keep your files safe.">
+  <link rel="icon" type="image/png" href="iconfriday.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #000000;
+      --bg-secondary: #030305;
+      --bg-card: #0a0a0e;
+      --border: #1a1a24;
+      --text-primary: #ffffff;
+      --text-secondary: #a1a1aa;
+      --royal: #2563eb;
+      --royal-light: #3b82f6;
+      --green: #10b981;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      z-index: 100;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .logo img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+
+    .back-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--royal-light);
+    }
+
+    .page-content {
+      padding: 80px 0;
+    }
+
+    .page-content h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 18px;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-content h2 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+
+    .page-content p {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    .page-content ul {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+
+    .page-content li {
+      margin-bottom: 8px;
+    }
+
+    .page-content strong {
+      color: var(--text-primary);
+    }
+
+    .security-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 32px 0;
+    }
+
+    .security-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .security-card-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(16, 185, 129, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .security-card-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--green);
+    }
+
+    .security-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .security-card p {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .highlight-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 24px 0;
+    }
+
+    .highlight-box.green {
+      border-color: rgba(16, 185, 129, 0.3);
+      background: rgba(16, 185, 129, 0.05);
+    }
+
+    .highlight-box h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--green);
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+    }
+
+    .report-box {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      border-radius: 16px;
+      padding: 32px;
+      margin: 48px 0;
+      text-align: center;
+    }
+
+    .report-box h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .report-box p {
+      margin-bottom: 20px;
+    }
+
+    .report-box a {
+      display: inline-block;
+      background: var(--royal);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .report-box a:hover {
+      background: var(--royal-light);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    footer p {
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--royal-light);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="iconfriday.png" alt="Friday V2">
+        <span>Friday V2</span>
+      </a>
+      <a href="/" class="back-link">Back to Home</a>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="container">
+      <h1>Security</h1>
+      <p class="subtitle">How we keep your files safe and secure</p>
+
+      <div class="highlight-box green">
+        <h4>100% Local Processing</h4>
+        <p>Friday V2 operates entirely on your Mac. Your files are never uploaded to any server, ensuring complete privacy and security of your data.</p>
+      </div>
+
+      <div class="security-grid">
+        <div class="security-card">
+          <div class="security-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <h3>Local Only</h3>
+          <p>All file processing happens on your device. No cloud, no servers, no data transmission.</p>
+        </div>
+
+        <div class="security-card">
+          <div class="security-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3>Sandboxed</h3>
+          <p>Runs in a secure macOS sandbox with limited system access.</p>
+        </div>
+
+        <div class="security-card">
+          <div class="security-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3>Undo History</h3>
+          <p>Every action can be undone. Your original file structure is always recoverable.</p>
+        </div>
+
+        <div class="security-card">
+          <div class="security-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <h3>Transparent</h3>
+          <p>See exactly what Friday V2 will do before confirming any action.</p>
+        </div>
+      </div>
+
+      <h2>Our Security Practices</h2>
+
+      <h3>Application Security</h3>
+      <ul>
+        <li><strong>Code Signing:</strong> The app is signed with a valid Apple Developer certificate</li>
+        <li><strong>Notarization:</strong> Verified by Apple's notarization service</li>
+        <li><strong>Sandboxing:</strong> Runs in macOS sandbox with minimal permissions</li>
+        <li><strong>No Root Access:</strong> Never requests administrator privileges</li>
+      </ul>
+
+      <h3>Data Security</h3>
+      <ul>
+        <li><strong>Zero Network:</strong> No internet connection required for core functionality</li>
+        <li><strong>No Telemetry:</strong> No tracking or analytics without explicit consent</li>
+        <li><strong>Local Storage:</strong> All preferences stored locally in encrypted format</li>
+        <li><strong>No File Upload:</strong> Files are never transmitted anywhere</li>
+      </ul>
+
+      <h3>Permissions Requested</h3>
+      <p>Friday V2 only requests the permissions it needs:</p>
+      <ul>
+        <li><strong>File Access:</strong> To read and organize files in selected folders</li>
+        <li><strong>Finder Extension:</strong> Optional, for right-click integration</li>
+      </ul>
+      <p>We never request:</p>
+      <ul>
+        <li>Camera or microphone access</li>
+        <li>Location services</li>
+        <li>Contact or calendar access</li>
+        <li>Full disk access (only selected folders)</li>
+      </ul>
+
+      <h2>Safe File Handling</h2>
+      <p>Friday V2 includes multiple safety features:</p>
+      <ul>
+        <li><strong>Preview Mode:</strong> See all proposed changes before applying them</li>
+        <li><strong>Undo Stack:</strong> Complete history of all actions for easy reversal</li>
+        <li><strong>Protected Folders:</strong> System folders are automatically excluded</li>
+        <li><strong>Conflict Resolution:</strong> Smart handling of duplicate file names</li>
+        <li><strong>Dry Run:</strong> Test organization rules without moving files</li>
+      </ul>
+
+      <h2>Third-Party Dependencies</h2>
+      <p>We carefully vet all dependencies:</p>
+      <ul>
+        <li>Minimal external dependencies</li>
+        <li>Regular security audits</li>
+        <li>No analytics or tracking SDKs</li>
+        <li>Open-source components where possible</li>
+      </ul>
+
+      <div class="report-box">
+        <h3>Report a Vulnerability</h3>
+        <p>Found a security issue? We appreciate responsible disclosure.</p>
+        <a href="mailto:security@usefriday.app">security@usefriday.app</a>
+      </div>
+
+      <h2>Questions?</h2>
+      <p>If you have any security-related questions, please contact us at <strong>security@usefriday.app</strong></p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Friday V2. All rights reserved. | <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a></p>
+    </div>
+  </footer>
+</body>
+</html>
