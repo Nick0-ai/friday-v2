@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Roadmap - Friday V2</title>
-  <meta name="description" content="See what's coming next for Friday V2. Our product roadmap and upcoming features.">
+  <meta name="description" content="See the vision for Friday V2. From smart file organization to a complete AI assistant.">
   <link rel="icon" type="image/png" href="iconfriday.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,69 +101,132 @@
     .subtitle {
       color: var(--text-secondary);
       font-size: 18px;
+      margin-bottom: 32px;
+    }
+
+    .vision-box {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      border-radius: 16px;
+      padding: 32px;
       margin-bottom: 48px;
-      padding-bottom: 32px;
-      border-bottom: 1px solid var(--border);
     }
 
-    .roadmap-section {
+    .vision-box h2 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: var(--royal-light);
+    }
+
+    .vision-box p {
+      color: var(--text-secondary);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .phase-section {
       margin-bottom: 56px;
+      position: relative;
     }
 
-    .roadmap-header {
+    .phase-section::before {
+      content: '';
+      position: absolute;
+      left: 24px;
+      top: 80px;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .phase-section:last-of-type::before {
+      display: none;
+    }
+
+    .phase-header {
       display: flex;
-      align-items: center;
-      gap: 12px;
+      align-items: flex-start;
+      gap: 20px;
       margin-bottom: 24px;
     }
 
-    .roadmap-status {
+    .phase-number {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      border-radius: 100px;
-      font-size: 13px;
-      font-weight: 600;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 700;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
     }
 
-    .roadmap-status.completed {
+    .phase-number.current {
+      background: linear-gradient(135deg, var(--green) 0%, #059669 100%);
+      box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+    }
+
+    .phase-number.next {
+      background: linear-gradient(135deg, var(--royal) 0%, var(--purple) 100%);
+    }
+
+    .phase-number.future {
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .phase-info {
+      flex: 1;
+    }
+
+    .phase-status {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .phase-status.current {
       background: rgba(16, 185, 129, 0.15);
       color: var(--green);
       border: 1px solid rgba(16, 185, 129, 0.3);
     }
 
-    .roadmap-status.in-progress {
+    .phase-status.next {
       background: rgba(37, 99, 235, 0.15);
       color: var(--royal-light);
       border: 1px solid rgba(37, 99, 235, 0.3);
     }
 
-    .roadmap-status.planned {
+    .phase-status.future {
       background: rgba(139, 92, 246, 0.15);
       color: var(--purple);
       border: 1px solid rgba(139, 92, 246, 0.3);
     }
 
-    .roadmap-status.exploring {
-      background: rgba(249, 115, 22, 0.15);
-      color: var(--orange);
-      border: 1px solid rgba(249, 115, 22, 0.3);
+    .phase-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
     }
 
-    .roadmap-status svg {
-      width: 14px;
-      height: 14px;
-    }
-
-    .roadmap-title {
-      font-size: 24px;
-      font-weight: 600;
+    .phase-subtitle {
+      color: var(--text-secondary);
+      font-size: 16px;
+      margin-bottom: 20px;
     }
 
     .feature-cards {
       display: grid;
       gap: 16px;
+      margin-left: 70px;
     }
 
     .feature-card {
@@ -175,7 +238,7 @@
     }
 
     .feature-card:hover {
-      border-color: var(--border-hover, #2a2a38);
+      border-color: #2a2a38;
     }
 
     .feature-card h4 {
@@ -199,17 +262,66 @@
       margin-bottom: 0;
     }
 
-    .feature-tag {
-      display: inline-block;
-      padding: 2px 8px;
-      background: var(--bg-secondary);
-      border-radius: 4px;
-      font-size: 11px;
-      color: var(--text-secondary);
-      margin-top: 12px;
+    .feature-card.highlight {
+      border-color: rgba(16, 185, 129, 0.3);
+      background: rgba(16, 185, 129, 0.05);
     }
 
-    .vote-section {
+    .feature-card.highlight h4 svg {
+      stroke: var(--green);
+    }
+
+    .ultimate-vision {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      margin: 56px 0;
+      text-align: center;
+    }
+
+    .ultimate-vision h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--royal-light) 0%, var(--purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .ultimate-vision p {
+      color: var(--text-secondary);
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto 32px;
+      line-height: 1.8;
+    }
+
+    .vision-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: left;
+    }
+
+    .vision-feature {
+      padding: 16px;
+    }
+
+    .vision-feature h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--text-primary);
+    }
+
+    .vision-feature p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 0;
+    }
+
+    .feedback-section {
       background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
       border: 1px solid rgba(37, 99, 235, 0.3);
       border-radius: 16px;
@@ -218,17 +330,17 @@
       text-align: center;
     }
 
-    .vote-section h3 {
+    .feedback-section h3 {
       font-size: 24px;
       margin-bottom: 12px;
     }
 
-    .vote-section p {
+    .feedback-section p {
       color: var(--text-secondary);
       margin-bottom: 20px;
     }
 
-    .vote-section a {
+    .feedback-section a {
       display: inline-block;
       background: var(--royal);
       color: white;
@@ -239,7 +351,7 @@
       transition: background 0.2s;
     }
 
-    .vote-section a:hover {
+    .feedback-section a:hover {
       background: var(--royal-light);
     }
 
@@ -278,21 +390,25 @@
   <main class="page-content">
     <div class="container">
       <h1>Roadmap</h1>
-      <p class="subtitle">See what we're working on and what's coming next</p>
+      <p class="subtitle">The journey to building an AI that truly lives in your computer</p>
 
-      <!-- Completed -->
-      <div class="roadmap-section">
-        <div class="roadmap-header">
-          <span class="roadmap-status completed">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
-            Completed
-          </span>
-          <span class="roadmap-title">v1.0 Launch</span>
+      <div class="vision-box">
+        <h2>Our Vision</h2>
+        <p>Friday isn't just an app. It's a digital being that lives in your Mac. An AI that sees your screen, understands your work, and helps you accomplish anything. We're building this vision one phase at a time, starting with what every Mac user needs: smart file organization.</p>
+      </div>
+
+      <!-- Phase 1: Current -->
+      <div class="phase-section">
+        <div class="phase-header">
+          <div class="phase-number current">1</div>
+          <div class="phase-info">
+            <span class="phase-status current">Now Available</span>
+            <h3 class="phase-title">Smart File Organization</h3>
+            <p class="phase-subtitle">AI-powered file classification and automatic organization for your Mac</p>
+          </div>
         </div>
         <div class="feature-cards">
-          <div class="feature-card">
+          <div class="feature-card highlight">
             <h4>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M12 2L2 7l10 5 10-5-10-5z"/>
@@ -301,18 +417,18 @@
               </svg>
               AI-Powered Classification
             </h4>
-            <p>Machine learning models that understand file content and automatically categorize your files.</p>
+            <p>Machine learning that understands file content and automatically categorizes your files with incredible accuracy.</p>
           </div>
-          <div class="feature-card">
+          <div class="feature-card highlight">
             <h4>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 3h18v18H3zM12 8v8M8 12h8"/>
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
               </svg>
-              Smart Organization
+              Smart Folder Creation
             </h4>
-            <p>Automatically create folder structures and move files to their appropriate locations.</p>
+            <p>Automatically creates logical folder structures based on your file types and content.</p>
           </div>
-          <div class="feature-card">
+          <div class="feature-card highlight">
             <h4>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="1 4 1 10 7 10"/>
@@ -320,84 +436,41 @@
               </svg>
               Full Undo History
             </h4>
-            <p>Complete history of all actions with the ability to undo any change at any time.</p>
+            <p>Every action is reversible. Complete history of all changes with one-click undo.</p>
           </div>
         </div>
       </div>
 
-      <!-- In Progress -->
-      <div class="roadmap-section">
-        <div class="roadmap-header">
-          <span class="roadmap-status in-progress">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <polyline points="12 6 12 12 16 14"/>
-            </svg>
-            In Progress
-          </span>
-          <span class="roadmap-title">v1.1</span>
+      <!-- Phase 2: Next -->
+      <div class="phase-section">
+        <div class="phase-header">
+          <div class="phase-number next">2</div>
+          <div class="phase-info">
+            <span class="phase-status next">Coming Next</span>
+            <h3 class="phase-title">Computer Vision & Control</h3>
+            <p class="phase-subtitle">Friday learns to see and interact with your Mac</p>
+          </div>
         </div>
         <div class="feature-cards">
           <div class="feature-card">
             <h4>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <line x1="3" y1="9" x2="21" y2="9"/>
-                <line x1="9" y1="21" x2="9" y2="9"/>
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="3"/>
               </svg>
-              Batch Operations
+              Screen Understanding
             </h4>
-            <p>Select multiple folders and organize them all at once with consistent rules.</p>
-            <span class="feature-tag">Coming in v1.1</span>
+            <p>Friday sees your screen in real-time. It understands what apps are open, what you're working on, and the context of your tasks.</p>
           </div>
           <div class="feature-card">
             <h4>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8"/>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
               </svg>
-              Advanced Search
+              Keyboard & Mouse Control
             </h4>
-            <p>Search across organized files with filters for date, type, size, and custom tags.</p>
-            <span class="feature-tag">Coming in v1.1</span>
-          </div>
-          <div class="feature-card">
-            <h4>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-              </svg>
-              Organization Templates
-            </h4>
-            <p>Pre-built templates for common use cases: photographers, developers, students, etc.</p>
-            <span class="feature-tag">Coming in v1.1</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Planned -->
-      <div class="roadmap-section">
-        <div class="roadmap-header">
-          <span class="roadmap-status planned">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-            </svg>
-            Planned
-          </span>
-          <span class="roadmap-title">v1.2+</span>
-        </div>
-        <div class="feature-cards">
-          <div class="feature-card">
-            <h4>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-              </svg>
-              Team Sharing
-            </h4>
-            <p>Share organization rules and templates with your team for consistent file management.</p>
+            <p>Execute actions on your behalf. Click buttons, type text, navigate apps - Friday can do it all.</p>
           </div>
           <div class="feature-card">
             <h4>
@@ -406,67 +479,24 @@
                 <line x1="8" y1="21" x2="16" y2="21"/>
                 <line x1="12" y1="17" x2="12" y2="21"/>
               </svg>
-              Windows Version
+              App Integration
             </h4>
-            <p>Bring Friday V2's organization power to Windows users.</p>
-          </div>
-          <div class="feature-card">
-            <h4>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-              </svg>
-              API & Integrations
-            </h4>
-            <p>Connect Friday V2 with other tools like Notion, Slack, and automation platforms.</p>
-          </div>
-          <div class="feature-card">
-            <h4>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="3"/>
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-              </svg>
-              Smart Tagging
-            </h4>
-            <p>AI-generated tags for easier searching and filtering of your organized files.</p>
+            <p>Native integration with macOS apps. Control Safari, Finder, Notes, and any application on your Mac.</p>
           </div>
         </div>
       </div>
 
-      <!-- Exploring -->
-      <div class="roadmap-section">
-        <div class="roadmap-header">
-          <span class="roadmap-status exploring">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="16" x2="12" y2="12"/>
-              <line x1="12" y1="8" x2="12.01" y2="8"/>
-            </svg>
-            Exploring
-          </span>
-          <span class="roadmap-title">Future Ideas</span>
+      <!-- Phase 3: Future -->
+      <div class="phase-section">
+        <div class="phase-header">
+          <div class="phase-number future">3</div>
+          <div class="phase-info">
+            <span class="phase-status future">The Vision</span>
+            <h3 class="phase-title">Autonomous AI Assistant</h3>
+            <p class="phase-subtitle">A digital being that lives in your Mac</p>
+          </div>
         </div>
         <div class="feature-cards">
-          <div class="feature-card">
-            <h4>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="7 10 12 15 17 10"/>
-                <line x1="12" y1="15" x2="12" y2="3"/>
-              </svg>
-              Cloud Backup Integration
-            </h4>
-            <p>Optional encrypted backup of organization rules and history to your preferred cloud.</p>
-          </div>
-          <div class="feature-card">
-            <h4>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
-                <line x1="12" y1="18" x2="12.01" y2="18"/>
-              </svg>
-              iOS Companion App
-            </h4>
-            <p>View and manage your organized files from your iPhone or iPad.</p>
-          </div>
           <div class="feature-card">
             <h4>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -474,15 +504,94 @@
               </svg>
               Natural Language Commands
             </h4>
-            <p>"Move all screenshots from last week to Archive" - organize with plain English.</p>
+            <p>"Book my flight to Paris", "Research competitors and make a report", "Fix the bug in my code" - just tell Friday what you want.</p>
+          </div>
+          <div class="feature-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                <polyline points="2 17 12 22 22 17"/>
+                <polyline points="2 12 12 17 22 12"/>
+              </svg>
+              Multi-Model Orchestration
+            </h4>
+            <p>Friday intelligently routes tasks to the best AI model. Claude for reasoning, GPT for creativity, local models for privacy.</p>
+          </div>
+          <div class="feature-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+              Code Execution
+            </h4>
+            <p>Write and run code to accomplish tasks. Friday can create scripts, automate workflows, and build tools on the fly.</p>
+          </div>
+          <div class="feature-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                <line x1="9" y1="9" x2="9.01" y2="9"/>
+                <line x1="15" y1="9" x2="15.01" y2="9"/>
+              </svg>
+              Learns Your Preferences
+            </h4>
+            <p>Friday remembers how you like things done. It learns from corrections and gets better over time.</p>
+          </div>
+          <div class="feature-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+              </svg>
+              Proactive Assistance
+            </h4>
+            <p>Friday notices when you're stuck and offers help. It suggests actions based on your current context and past behavior.</p>
+          </div>
+          <div class="feature-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              Always Private
+            </h4>
+            <p>All processing happens on your Mac. Your data never leaves your computer unless you explicitly allow it.</p>
           </div>
         </div>
       </div>
 
-      <div class="vote-section">
-        <h3>Have a Feature Request?</h3>
-        <p>We'd love to hear your ideas! Let us know what features you'd like to see in Friday V2.</p>
-        <a href="mailto:feedback@usefriday.app">Submit Feedback</a>
+      <!-- Ultimate Vision -->
+      <div class="ultimate-vision">
+        <h2>The Ultimate Goal</h2>
+        <p>Imagine an AI that knows your computer like the back of its hand. That can navigate any app, complete any task, and work alongside you as a true digital companion. That's what we're building.</p>
+        <div class="vision-features">
+          <div class="vision-feature">
+            <h4>Sees Everything</h4>
+            <p>Real-time screen understanding</p>
+          </div>
+          <div class="vision-feature">
+            <h4>Controls Everything</h4>
+            <p>Full keyboard and mouse control</p>
+          </div>
+          <div class="vision-feature">
+            <h4>Learns Everything</h4>
+            <p>Adapts to your workflow</p>
+          </div>
+          <div class="vision-feature">
+            <h4>Respects Privacy</h4>
+            <p>100% local processing</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="feedback-section">
+        <h3>Shape the Future</h3>
+        <p>We're building Friday for you. Tell us what features matter most.</p>
+        <a href="mailto:hello@usefriday.app">Share Your Ideas</a>
       </div>
 
     </div>
@@ -490,7 +599,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2024 Friday V2. All rights reserved. | <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a></p>
+      <p>&copy; 2025 Friday Intelligence. All rights reserved. | <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a></p>
     </div>
   </footer>
 </body>
