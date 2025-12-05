@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Friday</title>
+  <meta name="description" content="Frequently asked questions about Friday - the AI-powered file organization tool for Mac.">
+  <link rel="icon" type="image/png" href="favicon2.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #000000;
+      --bg-card: #0a0a0e;
+      --bg-elevated: #0e0e14;
+      --border: #1a1a24;
+      --border-hover: #2a2a38;
+      --text-primary: #ffffff;
+      --text-secondary: #a1a1aa;
+      --text-muted: #52525b;
+      --royal: #2563eb;
+      --royal-light: #3b82f6;
+      --royal-dim: rgba(37, 99, 235, 0.1);
+      --gradient-text: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #c084fc 100%);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 20px 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(20px); z-index: 100; }
+    header .container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-primary); font-weight: 600; font-size: 18px; }
+    .logo img { width: 32px; height: 32px; border-radius: 8px; }
+    .back-link { color: var(--text-secondary); text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 6px; }
+    .back-link:hover { color: var(--royal-light); }
+    .page-content { padding: 80px 0; }
+    .page-header { text-align: center; margin-bottom: 60px; }
+    h1 { font-size: 48px; font-weight: 800; margin-bottom: 16px; letter-spacing: -2px; }
+    .gradient-text { background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: var(--text-secondary); font-size: 18px; }
+    .faq-section { margin-bottom: 48px; }
+    .faq-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--royal-light); }
+    .faq-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 12px; overflow: hidden; }
+    .faq-question { padding: 20px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 16px; transition: background 0.2s; }
+    .faq-question:hover { background: var(--bg-elevated); }
+    .faq-question svg { width: 20px; height: 20px; stroke: var(--text-muted); transition: transform 0.3s; flex-shrink: 0; margin-left: 16px; }
+    .faq-item.open .faq-question svg { transform: rotate(180deg); }
+    .faq-answer { padding: 0 24px; max-height: 0; overflow: hidden; transition: all 0.3s ease; }
+    .faq-item.open .faq-answer { padding: 0 24px 20px; max-height: 500px; }
+    .faq-answer p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
+    .faq-answer a { color: var(--royal-light); text-decoration: none; }
+    .faq-answer a:hover { text-decoration: underline; }
+    .cta-section { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 40px; text-align: center; margin-top: 60px; }
+    .cta-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+    .cta-section p { color: var(--text-secondary); margin-bottom: 24px; }
+    .cta-section a { color: var(--royal-light); text-decoration: none; font-weight: 600; }
+    .cta-section a:hover { text-decoration: underline; }
+    footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; }
+    footer p { color: var(--text-muted); font-size: 14px; }
+    footer a { color: var(--text-secondary); text-decoration: none; }
+    @media (max-width: 768px) { h1 { font-size: 36px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/" class="logo"><img src="iconfriday.png" alt="Friday"><span>Friday</span></a>
+      <a href="/" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to home
+      </a>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="container">
+      <div class="page-header">
+        <h1>Frequently Asked <span class="gradient-text">Questions</span></h1>
+        <p class="subtitle">Everything you need to know about Friday</p>
+      </div>
+
+      <section class="faq-section">
+        <h2>Getting Started</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">What is Friday?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer"><p>Friday is an AI-powered file organization tool for Mac. It automatically scans, analyzes, and organizes your files into smart folders based on their content, type, and context. No more messy desktops!</p></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">How do I install Friday?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer"><p>Simply download the DMG file from our homepage, open it, and drag Friday to your Applications folder. Launch it and you're ready to go!</p></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Is Friday free?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer"><p>Yes! Friday is completely free during our beta period. We'll introduce a Pro tier with advanced features in the future, but the core functionality will always remain free.</p></div>
+        </div>
+      </section>
+
+      <section class="faq-section">
+        <h2>Privacy & Security</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">Is my data safe?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer"><p>Absolutely. Friday processes everything locally on your Mac. Your files never leave your device, and we never see, collect, or store any of your data. Privacy is our core principle.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Does Friday need internet access?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer"><p>Friday works 100% offline. The AI runs locally on your Mac using on-device processing. No internet connection required for file organization.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">What permissions does Friday need?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer"><p>Friday only needs access to the folders you choose to organize. We request minimal permissions and never access files outside of your selected directories.</p></div>
+        </div>
+      </section>
+
+      <section class="faq-section">
+        <h2>Features</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">Can I undo an organization?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer"><p>Yes! Friday keeps a complete history of all file movements. You can undo any action with a single click, restoring files to their original locations instantly.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">What file types does Friday support?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer"><p>Friday supports all common file types including documents (PDF, Word, Pages), images (JPG, PNG, HEIC), videos, audio files, archives, and more. It intelligently categorizes each type.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Can I customize the organization rules?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer"><p>Currently, Friday uses AI to determine the best organization. Custom rules are coming in our Pro tier, allowing you to create your own organization patterns.</p></div>
+        </div>
+      </section>
+
+      <section class="faq-section">
+        <h2>Technical</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">What macOS versions are supported?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer"><p>Friday requires macOS 12 (Monterey) or later. It's optimized for Apple Silicon (M1/M2/M3) but also runs on Intel Macs.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Why is Friday only for Mac?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer"><p>We started with Mac to deliver the best possible experience on one platform first. Windows and Linux versions are on our roadmap for the future.</p></div>
+        </div>
+      </section>
+
+      <div class="cta-section">
+        <h2>Still have questions?</h2>
+        <p>We're here to help. Reach out to our team.</p>
+        <a href="/contact.html">Contact Us &rarr;</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Friday Intelligence. <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        document.querySelectorAll('.faq-item').forEach(i => { if (i !== item) i.classList.remove('open'); });
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
