@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rejoindre Friday - Carrieres</title>
+  <meta name="description" content="Rejoignez l'equipe Friday et construisez l'avenir de l'organisation de fichiers avec l'IA. Opportunites pour developpeurs, designers et passionnes.">
+  <link rel="icon" type="image/png" href="favicon2.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #000000;
+      --bg-secondary: #030305;
+      --bg-card: #0a0a0e;
+      --bg-elevated: #0e0e14;
+      --border: #1a1a24;
+      --border-hover: #2a2a38;
+      --text-primary: #ffffff;
+      --text-secondary: #a1a1aa;
+      --text-muted: #52525b;
+      --royal: #2563eb;
+      --royal-light: #3b82f6;
+      --royal-dim: rgba(37, 99, 235, 0.1);
+      --emerald: #10b981;
+      --emerald-dim: rgba(16, 185, 129, 0.1);
+      --violet: #8b5cf6;
+      --violet-dim: rgba(139, 92, 246, 0.1);
+      --gradient-royal: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #6366f1 100%);
+      --gradient-text: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #c084fc 100%);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      z-index: 100;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .logo img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+
+    .back-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .back-link:hover {
+      color: var(--royal-light);
+    }
+
+    .page-content {
+      padding: 80px 0;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .page-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 24px;
+      background: var(--emerald-dim);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .page-icon svg {
+      width: 40px;
+      height: 40px;
+      stroke: var(--emerald);
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+      line-height: 1.1;
+    }
+
+    .gradient-text {
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .values-section {
+      margin-bottom: 80px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .value-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .value-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+    }
+
+    .value-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 16px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .value-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .value-icon.royal { background: var(--royal-dim); }
+    .value-icon.royal svg { stroke: var(--royal-light); }
+    .value-icon.emerald { background: var(--emerald-dim); }
+    .value-icon.emerald svg { stroke: var(--emerald); }
+    .value-icon.violet { background: var(--violet-dim); }
+    .value-icon.violet svg { stroke: var(--violet); }
+
+    .value-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .value-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .roles-section {
+      margin-bottom: 80px;
+    }
+
+    .role-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .role-card:hover {
+      border-color: var(--border-hover);
+    }
+
+    .role-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .role-title {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .role-tags {
+      display: flex;
+      gap: 8px;
+    }
+
+    .role-tag {
+      padding: 6px 12px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .role-tag.open {
+      background: var(--emerald-dim);
+      border-color: rgba(16, 185, 129, 0.3);
+      color: var(--emerald);
+    }
+
+    .role-description {
+      color: var(--text-secondary);
+      font-size: 15px;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .role-requirements h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .role-requirements ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .role-requirements li {
+      font-size: 14px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .role-requirements li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--royal-light);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .apply-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 48px;
+      text-align: center;
+    }
+
+    .apply-section h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .apply-section p {
+      color: var(--text-secondary);
+      font-size: 18px;
+      margin-bottom: 32px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .apply-form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+      width: 100%;
+      padding: 16px 20px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text-primary);
+      font-size: 16px;
+      font-family: inherit;
+      transition: all 0.3s ease;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: var(--royal);
+      box-shadow: 0 0 0 3px var(--royal-dim);
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--text-muted);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23a1a1aa' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      background-size: 18px;
+      cursor: pointer;
+    }
+
+    .form-select option {
+      background: var(--bg-card);
+      color: var(--text-primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      width: 100%;
+    }
+
+    .btn-primary {
+      background: var(--gradient-royal);
+      color: white;
+      box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(37, 99, 235, 0.5);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .apply-note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    footer p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--royal-light);
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .spin {
+      animation: spin 1s linear infinite;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 36px;
+      }
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+      .role-requirements ul {
+        grid-template-columns: 1fr;
+      }
+      .apply-section {
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="iconfriday.png" alt="Friday">
+        <span>Friday</span>
+      </a>
+      <a href="/" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Retour a l'accueil
+      </a>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="container">
+      <div class="page-header">
+        <div class="page-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h1>Rejoindre <span class="gradient-text">Friday</span></h1>
+        <p class="subtitle">Nous construisons l'avenir de l'organisation de fichiers avec l'IA. Rejoignez une equipe passionnee et ambitieuse.</p>
+      </div>
+
+      <section class="values-section">
+        <h2 class="section-title">Nos valeurs</h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon royal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <h3>Excellence</h3>
+            <p>Nous visons la qualite dans chaque ligne de code et chaque interaction utilisateur.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon emerald">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3>Privacy First</h3>
+            <p>La vie privee des utilisateurs est sacree. Tout reste local, toujours.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon violet">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                <line x1="9" y1="9" x2="9.01" y2="9"/>
+                <line x1="15" y1="9" x2="15.01" y2="9"/>
+              </svg>
+            </div>
+            <h3>User Delight</h3>
+            <p>Chaque fonctionnalite doit apporter de la joie et simplifier la vie.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="roles-section">
+        <h2 class="section-title">Opportunites</h2>
+
+        <div class="role-card">
+          <div class="role-header">
+            <h3 class="role-title">Developpeur(se) Full-Stack</h3>
+            <div class="role-tags">
+              <span class="role-tag open">Ouvert</span>
+              <span class="role-tag">Remote</span>
+            </div>
+          </div>
+          <p class="role-description">
+            Rejoignez-nous pour construire les prochaines fonctionnalites de Friday. Vous travaillerez sur l'application Electron, le backend et l'integration IA.
+          </p>
+          <div class="role-requirements">
+            <h4>Ce qu'on recherche</h4>
+            <ul>
+              <li>JavaScript/TypeScript</li>
+              <li>Node.js / Electron</li>
+              <li>Experience avec les APIs IA</li>
+              <li>Passion pour l'UX</li>
+              <li>Autonomie</li>
+              <li>Creativite</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="role-card">
+          <div class="role-header">
+            <h3 class="role-title">Designer UI/UX</h3>
+            <div class="role-tags">
+              <span class="role-tag open">Ouvert</span>
+              <span class="role-tag">Remote</span>
+            </div>
+          </div>
+          <p class="role-description">
+            Creez des experiences utilisateur exceptionnelles pour Friday. Du design systeme aux micro-interactions, chaque detail compte.
+          </p>
+          <div class="role-requirements">
+            <h4>Ce qu'on recherche</h4>
+            <ul>
+              <li>Figma / Sketch</li>
+              <li>Design systeme</li>
+              <li>Animation & motion</li>
+              <li>Sensibilite macOS</li>
+              <li>Portfolio solide</li>
+              <li>Attention aux details</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="role-card">
+          <div class="role-header">
+            <h3 class="role-title">Beta Testeur Actif</h3>
+            <div class="role-tags">
+              <span class="role-tag open">Ouvert</span>
+              <span class="role-tag">Benevole</span>
+            </div>
+          </div>
+          <p class="role-description">
+            Testez Friday au quotidien et aidez-nous a l'ameliorer. Vos retours sont precieux pour construire le meilleur produit possible.
+          </p>
+          <div class="role-requirements">
+            <h4>Ce qu'on recherche</h4>
+            <ul>
+              <li>Mac utilisateur</li>
+              <li>Sens du detail</li>
+              <li>Communication claire</li>
+              <li>Disponibilite reguliere</li>
+              <li>Curiosite</li>
+              <li>Patience</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="apply-section">
+        <h2>Interesse(e) ?</h2>
+        <p>Envoyez-nous votre candidature. Pas de CV formel requis - parlez-nous de vous et de ce qui vous passionne.</p>
+
+        <form class="apply-form" id="applyForm" onsubmit="submitApplication(event)">
+          <div class="form-group">
+            <label class="form-label">Votre nom</label>
+            <input type="text" id="applyName" class="form-input" placeholder="Jean Dupont" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Votre email</label>
+            <input type="email" id="applyEmail" class="form-input" placeholder="jean@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Poste interesse</label>
+            <select id="applyRole" class="form-select" required>
+              <option value="">Selectionnez un poste</option>
+              <option value="fullstack">Developpeur(se) Full-Stack</option>
+              <option value="designer">Designer UI/UX</option>
+              <option value="beta">Beta Testeur</option>
+              <option value="other">Autre / Candidature spontanee</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Parlez-nous de vous</label>
+            <textarea id="applyMessage" class="form-textarea" placeholder="Votre parcours, vos passions, pourquoi Friday vous interesse..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Lien portfolio/GitHub/LinkedIn (optionnel)</label>
+            <input type="url" id="applyLink" class="form-input" placeholder="https://...">
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+            Envoyer ma candidature
+          </button>
+
+          <p class="apply-note">Votre candidature sera envoyee a hello@usefriday.app</p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Friday Intelligence. <a href="/privacy.html">Politique de confidentialite</a> | <a href="/terms.html">CGU</a></p>
+    </div>
+  </footer>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBXmEJTC5joii6jCvyUyWkySYp2ZNCfzMU",
+      authDomain: "friday-file-organizer.firebaseapp.com",
+      projectId: "friday-file-organizer",
+      storageBucket: "friday-file-organizer.firebasestorage.app",
+      messagingSenderId: "804770498043",
+      appId: "1:804770498043:web:b1f8b8b8b8b8b8b8b8b8b8"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    async function submitApplication(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('applyName').value;
+      const email = document.getElementById('applyEmail').value;
+      const role = document.getElementById('applyRole').value;
+      const message = document.getElementById('applyMessage').value;
+      const link = document.getElementById('applyLink').value || 'Non fourni';
+      const btn = event.target.querySelector('button[type="submit"]');
+
+      btn.disabled = true;
+      btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spin"><circle cx="12" cy="12" r="10"/></svg> Envoi...';
+
+      try {
+        // Save to Firestore
+        await db.collection('applications').add({
+          name: name,
+          email: email,
+          role: role,
+          message: message,
+          link: link,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+          source: 'careers-page'
+        });
+
+        // Open mailto as backup
+        const subjectText = `[Candidature ${role}] ${name}`;
+        const bodyText = `Candidature Friday\n\nNom: ${name}\nEmail: ${email}\nPoste: ${role}\nPortfolio/Lien: ${link}\n\nMessage:\n${message}`;
+        window.open(`mailto:hello@usefriday.app?subject=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(bodyText)}`, '_blank');
+
+        // Reset form
+        document.getElementById('applyForm').reset();
+        btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Candidature envoyee !';
+
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> Envoyer ma candidature';
+        }, 3000);
+
+      } catch (error) {
+        console.error('Error:', error);
+        // Fallback to mailto
+        const subjectText = `[Candidature ${role}] ${name}`;
+        const bodyText = `Candidature Friday\n\nNom: ${name}\nEmail: ${email}\nPoste: ${role}\nPortfolio/Lien: ${link}\n\nMessage:\n${message}`;
+        window.location.href = `mailto:hello@usefriday.app?subject=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(bodyText)}`;
+        btn.disabled = false;
+        btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> Envoyer ma candidature';
+      }
+    }
+  </script>
+</body>
+</html>
