@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers - Friday</title>
+  <meta name="description" content="Join the Friday team. We're building the future of AI-powered file organization. Open positions for developers, designers, and more.">
+  <link rel="icon" type="image/png" href="favicon2.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #000000;
+      --bg-card: #0a0a0e;
+      --bg-elevated: #0e0e14;
+      --border: #1a1a24;
+      --border-hover: #2a2a38;
+      --text-primary: #ffffff;
+      --text-secondary: #a1a1aa;
+      --text-muted: #52525b;
+      --royal: #2563eb;
+      --royal-light: #3b82f6;
+      --royal-dim: rgba(37, 99, 235, 0.1);
+      --emerald: #10b981;
+      --emerald-dim: rgba(16, 185, 129, 0.1);
+      --gradient-royal: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #6366f1 100%);
+      --gradient-text: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #c084fc 100%);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 20px 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(20px); z-index: 100; }
+    header .container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-primary); font-weight: 600; font-size: 18px; }
+    .logo img { width: 32px; height: 32px; border-radius: 8px; }
+    .back-link { color: var(--text-secondary); text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 6px; }
+    .back-link:hover { color: var(--royal-light); }
+    .page-content { padding: 80px 0; }
+    .page-header { text-align: center; margin-bottom: 60px; }
+    h1 { font-size: 48px; font-weight: 800; margin-bottom: 20px; letter-spacing: -2px; }
+    .gradient-text { background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: var(--text-secondary); font-size: 20px; max-width: 600px; margin: 0 auto; }
+    .roles-section { margin-bottom: 60px; }
+    .section-title { font-size: 24px; font-weight: 700; margin-bottom: 24px; }
+    .role-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; margin-bottom: 20px; transition: all 0.3s ease; }
+    .role-card:hover { border-color: var(--border-hover); }
+    .role-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
+    .role-title { font-size: 22px; font-weight: 700; }
+    .role-tags { display: flex; gap: 8px; }
+    .role-tag { padding: 6px 12px; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 20px; font-size: 12px; font-weight: 500; color: var(--text-secondary); }
+    .role-tag.open { background: var(--emerald-dim); border-color: rgba(16, 185, 129, 0.3); color: var(--emerald); }
+    .role-description { color: var(--text-secondary); font-size: 15px; margin-bottom: 20px; line-height: 1.7; }
+    .role-requirements h4 { font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    .role-requirements ul { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .role-requirements li { font-size: 14px; color: var(--text-secondary); display: flex; align-items: center; gap: 8px; }
+    .role-requirements li::before { content: ''; width: 6px; height: 6px; background: var(--royal-light); border-radius: 50%; }
+    .apply-section { background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 48px; text-align: center; }
+    .apply-section h2 { font-size: 28px; font-weight: 700; margin-bottom: 16px; }
+    .apply-section p { color: var(--text-secondary); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .apply-form { max-width: 500px; margin: 0 auto; text-align: left; }
+    .form-group { margin-bottom: 20px; }
+    .form-label { display: block; font-size: 14px; font-weight: 500; color: var(--text-secondary); margin-bottom: 8px; }
+    .form-input, .form-textarea, .form-select { width: 100%; padding: 16px 20px; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 12px; color: var(--text-primary); font-size: 16px; font-family: inherit; transition: all 0.3s ease; }
+    .form-input:focus, .form-textarea:focus, .form-select:focus { outline: none; border-color: var(--royal); box-shadow: 0 0 0 3px var(--royal-dim); }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--text-muted); }
+    .form-textarea { min-height: 120px; resize: vertical; }
+    .form-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23a1a1aa' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; background-size: 18px; cursor: pointer; }
+    .form-select option { background: var(--bg-card); color: var(--text-primary); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 32px; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 12px; cursor: pointer; transition: all 0.3s ease; border: none; width: 100%; background: var(--gradient-royal); color: white; box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4); }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37, 99, 235, 0.5); }
+    .form-note { margin-top: 20px; font-size: 13px; color: var(--text-muted); text-align: center; }
+    footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; }
+    footer p { color: var(--text-muted); font-size: 14px; }
+    footer a { color: var(--text-secondary); text-decoration: none; }
+    @media (max-width: 768px) { .role-requirements ul { grid-template-columns: 1fr; } h1 { font-size: 36px; } .apply-section { padding: 32px 24px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/" class="logo"><img src="iconfriday.png" alt="Friday"><span>Friday</span></a>
+      <a href="/" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to home
+      </a>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="container">
+      <div class="page-header">
+        <h1>Join <span class="gradient-text">Friday</span></h1>
+        <p class="subtitle">We're building the future of file organization. Join our passionate, ambitious team.</p>
+      </div>
+
+      <section class="roles-section">
+        <h2 class="section-title">Open Positions</h2>
+
+        <div class="role-card">
+          <div class="role-header">
+            <h3 class="role-title">Full-Stack Developer</h3>
+            <div class="role-tags"><span class="role-tag open">Open</span><span class="role-tag">Remote</span></div>
+          </div>
+          <p class="role-description">Join us to build the next features of Friday. You'll work on the Electron app, backend services, and AI integration.</p>
+          <div class="role-requirements">
+            <h4>What we're looking for</h4>
+            <ul>
+              <li>JavaScript/TypeScript</li>
+              <li>Node.js / Electron</li>
+              <li>Experience with AI APIs</li>
+              <li>Passion for UX</li>
+              <li>Self-motivated</li>
+              <li>Creative problem solver</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="role-card">
+          <div class="role-header">
+            <h3 class="role-title">UI/UX Designer</h3>
+            <div class="role-tags"><span class="role-tag open">Open</span><span class="role-tag">Remote</span></div>
+          </div>
+          <p class="role-description">Create exceptional user experiences for Friday. From design systems to micro-interactions, every detail matters.</p>
+          <div class="role-requirements">
+            <h4>What we're looking for</h4>
+            <ul>
+              <li>Figma / Sketch</li>
+              <li>Design systems</li>
+              <li>Animation & motion</li>
+              <li>macOS design sense</li>
+              <li>Strong portfolio</li>
+              <li>Attention to detail</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="role-card">
+          <div class="role-header">
+            <h3 class="role-title">Beta Tester</h3>
+            <div class="role-tags"><span class="role-tag open">Open</span><span class="role-tag">Volunteer</span></div>
+          </div>
+          <p class="role-description">Test Friday daily and help us improve. Your feedback is invaluable for building the best product possible.</p>
+          <div class="role-requirements">
+            <h4>What we're looking for</h4>
+            <ul>
+              <li>Mac user</li>
+              <li>Eye for detail</li>
+              <li>Clear communication</li>
+              <li>Regular availability</li>
+              <li>Curiosity</li>
+              <li>Patience</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="apply-section">
+        <h2>Interested?</h2>
+        <p>Send us your application. No formal CV required - tell us about yourself and what excites you.</p>
+
+        <form class="apply-form" id="applyForm" onsubmit="submitApplication(event)">
+          <div class="form-group">
+            <label class="form-label">Your name</label>
+            <input type="text" id="applyName" class="form-input" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your email</label>
+            <input type="email" id="applyEmail" class="form-input" placeholder="john@example.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Position</label>
+            <select id="applyRole" class="form-select" required>
+              <option value="">Select a position</option>
+              <option value="fullstack">Full-Stack Developer</option>
+              <option value="designer">UI/UX Designer</option>
+              <option value="beta">Beta Tester</option>
+              <option value="other">Other / Open Application</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tell us about yourself</label>
+            <textarea id="applyMessage" class="form-textarea" placeholder="Your background, passions, why Friday interests you..." required></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Portfolio/GitHub/LinkedIn (optional)</label>
+            <input type="url" id="applyLink" class="form-input" placeholder="https://...">
+          </div>
+          <button type="submit" class="btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            Submit Application
+          </button>
+          <p class="form-note">Your application will be sent to the Friday team</p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Friday Intelligence. <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a></p>
+    </div>
+  </footer>
+
+  <script>
+    function submitApplication(event) {
+      event.preventDefault();
+      const name = document.getElementById('applyName').value;
+      const email = document.getElementById('applyEmail').value;
+      const role = document.getElementById('applyRole').value;
+      const message = document.getElementById('applyMessage').value;
+      const link = document.getElementById('applyLink').value || 'Not provided';
+      const btn = event.target.querySelector('button[type="submit"]');
+
+      const subjectText = `[Application: ${role}] ${name}`;
+      const bodyText = `Application for Friday\n\nName: ${name}\nEmail: ${email}\nPosition: ${role}\nPortfolio/Link: ${link}\n\nMessage:\n${message}`;
+      window.location.href = `mailto:hello@usefriday.app?subject=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(bodyText)}`;
+
+      document.getElementById('applyForm').reset();
+      btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Opening mail app...';
+      setTimeout(() => {
+        btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> Submit Application';
+      }, 2000);
+    }
+  </script>
+</body>
+</html>

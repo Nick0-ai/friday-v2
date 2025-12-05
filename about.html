@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Friday</title>
+  <meta name="description" content="Learn about Friday - the AI-powered file organization tool built for Mac. Our mission, story, and the team behind it.">
+  <link rel="icon" type="image/png" href="favicon2.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #000000;
+      --bg-card: #0a0a0e;
+      --bg-elevated: #0e0e14;
+      --border: #1a1a24;
+      --text-primary: #ffffff;
+      --text-secondary: #a1a1aa;
+      --text-muted: #52525b;
+      --royal: #2563eb;
+      --royal-light: #3b82f6;
+      --royal-dim: rgba(37, 99, 235, 0.1);
+      --emerald: #10b981;
+      --emerald-dim: rgba(16, 185, 129, 0.1);
+      --violet: #8b5cf6;
+      --violet-dim: rgba(139, 92, 246, 0.1);
+      --gradient-text: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #c084fc 100%);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 20px 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(20px); z-index: 100; }
+    header .container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-primary); font-weight: 600; font-size: 18px; }
+    .logo img { width: 32px; height: 32px; border-radius: 8px; }
+    .back-link { color: var(--text-secondary); text-decoration: none; font-size: 14px; transition: color 0.2s; display: flex; align-items: center; gap: 6px; }
+    .back-link:hover { color: var(--royal-light); }
+    .page-content { padding: 80px 0; }
+    .page-header { text-align: center; margin-bottom: 80px; }
+    h1 { font-size: 48px; font-weight: 800; margin-bottom: 20px; letter-spacing: -2px; }
+    .gradient-text { background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: var(--text-secondary); font-size: 20px; max-width: 600px; margin: 0 auto; line-height: 1.6; }
+    .content-section { margin-bottom: 80px; }
+    .content-section h2 { font-size: 32px; font-weight: 700; margin-bottom: 24px; }
+    .content-section p { color: var(--text-secondary); font-size: 17px; margin-bottom: 16px; line-height: 1.8; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+    .value-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; text-align: center; }
+    .value-icon { width: 60px; height: 60px; margin: 0 auto 20px; border-radius: 16px; display: flex; align-items: center; justify-content: center; }
+    .value-icon svg { width: 28px; height: 28px; }
+    .value-icon.royal { background: var(--royal-dim); } .value-icon.royal svg { stroke: var(--royal-light); }
+    .value-icon.emerald { background: var(--emerald-dim); } .value-icon.emerald svg { stroke: var(--emerald); }
+    .value-icon.violet { background: var(--violet-dim); } .value-icon.violet svg { stroke: var(--violet); }
+    .value-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+    .value-card p { font-size: 14px; color: var(--text-secondary); }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px; }
+    .stat { text-align: center; }
+    .stat-number { font-size: 48px; font-weight: 800; background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .stat-label { color: var(--text-secondary); font-size: 14px; margin-top: 8px; }
+    .cta-section { background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 48px; text-align: center; }
+    .cta-section h2 { font-size: 28px; font-weight: 700; margin-bottom: 16px; }
+    .cta-section p { color: var(--text-secondary); margin-bottom: 24px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; font-size: 15px; font-weight: 600; text-decoration: none; border-radius: 12px; background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #6366f1 100%); color: white; transition: all 0.3s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37, 99, 235, 0.5); }
+    footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; }
+    footer p { color: var(--text-muted); font-size: 14px; }
+    footer a { color: var(--text-secondary); text-decoration: none; }
+    @media (max-width: 768px) { .values-grid, .stats-grid { grid-template-columns: 1fr 1fr; } h1 { font-size: 36px; } }
+    @media (max-width: 480px) { .values-grid, .stats-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/" class="logo"><img src="iconfriday.png" alt="Friday"><span>Friday</span></a>
+      <a href="/" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to home
+      </a>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="container">
+      <div class="page-header">
+        <h1>About <span class="gradient-text">Friday</span></h1>
+        <p class="subtitle">We're building the future of file organization. AI-powered, privacy-first, and designed for the way you actually work.</p>
+      </div>
+
+      <section class="content-section">
+        <h2>Our Mission</h2>
+        <p>We believe your files should organize themselves. That's why we built Friday - an AI assistant that understands your files and puts them exactly where they belong, automatically.</p>
+        <p>In a world where we create more digital content than ever, staying organized shouldn't feel like a chore. Friday uses advanced AI to learn your preferences and keep your digital life tidy, without you lifting a finger.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Our Values</h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon emerald">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Privacy First</h3>
+            <p>Your files never leave your Mac. All AI processing happens locally on your device.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon royal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h3>Excellence</h3>
+            <p>We obsess over every detail to deliver the best file organization experience possible.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon violet">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            <h3>User Delight</h3>
+            <p>Every feature is designed to bring joy and simplify your digital life.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>By the Numbers</h2>
+        <div class="stats-grid">
+          <div class="stat">
+            <div class="stat-number">10K+</div>
+            <div class="stat-label">Files Organized</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Beta Users</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Local Processing</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Data Collected</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="cta-section">
+        <h2>Join the Revolution</h2>
+        <p>Ready to transform your messy desktop into perfectly organized folders?</p>
+        <a href="https://github.com/Nick0-ai/friday-app/releases/latest/download/Friday-1.0.12-mac-arm64.dmg" class="btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Download for Mac
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Friday Intelligence. <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing - Friday</title>
+  <meta name="description" content="Friday pricing plans. Free during beta, with Pro features coming soon.">
+  <link rel="icon" type="image/png" href="favicon2.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #000000;
+      --bg-card: #0a0a0e;
+      --bg-elevated: #0e0e14;
+      --border: #1a1a24;
+      --border-hover: #2a2a38;
+      --text-primary: #ffffff;
+      --text-secondary: #a1a1aa;
+      --text-muted: #52525b;
+      --royal: #2563eb;
+      --royal-light: #3b82f6;
+      --royal-dim: rgba(37, 99, 235, 0.1);
+      --emerald: #10b981;
+      --emerald-dim: rgba(16, 185, 129, 0.1);
+      --gradient-royal: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #6366f1 100%);
+      --gradient-text: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #c084fc 100%);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 20px 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(20px); z-index: 100; }
+    header .container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-primary); font-weight: 600; font-size: 18px; }
+    .logo img { width: 32px; height: 32px; border-radius: 8px; }
+    .back-link { color: var(--text-secondary); text-decoration: none; font-size: 14px; transition: color 0.2s; display: flex; align-items: center; gap: 6px; }
+    .back-link:hover { color: var(--royal-light); }
+    .page-content { padding: 80px 0; }
+    .page-header { text-align: center; margin-bottom: 60px; }
+    h1 { font-size: 48px; font-weight: 800; margin-bottom: 16px; letter-spacing: -2px; }
+    .gradient-text { background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: var(--text-secondary); font-size: 20px; max-width: 600px; margin: 0 auto; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 800px; margin: 0 auto; }
+    .pricing-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 40px; position: relative; transition: all 0.3s ease; }
+    .pricing-card:hover { border-color: var(--border-hover); transform: translateY(-4px); }
+    .pricing-card.featured { border-color: var(--royal); }
+    .pricing-card.featured::before { content: 'POPULAR'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gradient-royal); padding: 6px 16px; border-radius: 20px; font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+    .plan-name { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+    .plan-price { font-size: 48px; font-weight: 800; margin-bottom: 8px; }
+    .plan-price span { font-size: 18px; font-weight: 400; color: var(--text-secondary); }
+    .plan-desc { color: var(--text-secondary); font-size: 14px; margin-bottom: 32px; }
+    .plan-features { list-style: none; margin-bottom: 32px; }
+    .plan-features li { display: flex; align-items: center; gap: 12px; padding: 10px 0; color: var(--text-secondary); font-size: 15px; }
+    .plan-features li svg { width: 20px; height: 20px; stroke: var(--emerald); flex-shrink: 0; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 32px; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 12px; cursor: pointer; transition: all 0.3s ease; border: none; width: 100%; }
+    .btn-primary { background: var(--gradient-royal); color: white; box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37, 99, 235, 0.5); }
+    .btn-secondary { background: var(--bg-elevated); color: var(--text-primary); border: 1px solid var(--border); }
+    .btn-secondary:hover { border-color: var(--border-hover); }
+    .beta-notice { background: var(--emerald-dim); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px; padding: 24px; text-align: center; margin-top: 60px; }
+    .beta-notice h3 { color: var(--emerald); font-size: 18px; margin-bottom: 8px; }
+    .beta-notice p { color: var(--text-secondary); font-size: 14px; }
+    footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; }
+    footer p { color: var(--text-muted); font-size: 14px; }
+    footer a { color: var(--text-secondary); text-decoration: none; }
+    footer a:hover { color: var(--royal-light); }
+    @media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr; } h1 { font-size: 36px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/" class="logo"><img src="iconfriday.png" alt="Friday"><span>Friday</span></a>
+      <a href="/" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to home
+      </a>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="container">
+      <div class="page-header">
+        <h1>Simple <span class="gradient-text">Pricing</span></h1>
+        <p class="subtitle">Start free during beta. No credit card required. Pro features coming soon.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card featured">
+          <h3 class="plan-name">Free</h3>
+          <div class="plan-price">$0 <span>/ forever</span></div>
+          <p class="plan-desc">Perfect for getting started with AI file organization</p>
+          <ul class="plan-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Unlimited file organization</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Smart folder creation</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> AI-powered categorization</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 100% local processing</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Undo any action</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Community support</li>
+          </ul>
+          <a href="https://github.com/Nick0-ai/friday-app/releases/latest/download/Friday-1.0.12-mac-arm64.dmg" class="btn btn-primary">Download Free</a>
+        </div>
+
+        <div class="pricing-card">
+          <h3 class="plan-name">Pro</h3>
+          <div class="plan-price">$9 <span>/ month</span></div>
+          <p class="plan-desc">Advanced features for power users (Coming Soon)</p>
+          <ul class="plan-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Everything in Free</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Custom organization rules</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Scheduled auto-organize</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Multiple folder monitoring</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Advanced AI models</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Priority support</li>
+          </ul>
+          <button class="btn btn-secondary" disabled>Coming Soon</button>
+        </div>
+      </div>
+
+      <div class="beta-notice">
+        <h3>Currently in Beta</h3>
+        <p>Friday is free during beta. Join now and help shape the future of file organization. Early users get special perks when Pro launches!</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Friday Intelligence. <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a></p>
+    </div>
+  </footer>
+</body>
+</html>
