@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - Friday</title>
-  <meta name="description" content="Friday is Jarvis for your Mac. An AI assistant that understands context, orchestrates multiple tools, and executes complete workflows autonomously.">
+  <meta name="description" content="Learn about Friday - the AI-powered file organization tool built for Mac. Our mission, story, and vision for the future.">
   <link rel="icon" type="image/png" href="favicon2.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,6 @@
       --bg-card: #0a0a0e;
       --bg-elevated: #0e0e14;
       --border: #1a1a24;
-      --border-hover: #2a2a38;
       --text-primary: #ffffff;
       --text-secondary: #a1a1aa;
       --text-muted: #52525b;
@@ -26,13 +25,11 @@
       --emerald-dim: rgba(16, 185, 129, 0.1);
       --violet: #8b5cf6;
       --violet-dim: rgba(139, 92, 246, 0.1);
-      --amber: #f59e0b;
-      --amber-dim: rgba(245, 158, 11, 0.1);
       --gradient-text: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #c084fc 100%);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
-    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
     header { padding: 20px 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(20px); z-index: 100; }
     header .container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; }
     .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-primary); font-weight: 600; font-size: 18px; }
@@ -43,34 +40,21 @@
     .page-header { text-align: center; margin-bottom: 60px; }
     h1 { font-size: 48px; font-weight: 800; margin-bottom: 20px; letter-spacing: -2px; }
     .gradient-text { background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .subtitle { color: var(--text-secondary); font-size: 20px; max-width: 700px; margin: 0 auto; line-height: 1.6; }
+    .subtitle { color: var(--text-secondary); font-size: 20px; max-width: 600px; margin: 0 auto; line-height: 1.6; }
     .content-section { margin-bottom: 60px; }
     .content-section h2 { font-size: 28px; font-weight: 700; margin-bottom: 20px; }
     .content-section p { color: var(--text-secondary); font-size: 17px; margin-bottom: 16px; line-height: 1.8; }
-    .highlight-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin: 24px 0; }
-    .highlight-box p { margin-bottom: 0; font-style: italic; }
-    .example-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; margin-bottom: 24px; }
-    .example-card h3 { font-size: 20px; font-weight: 600; margin-bottom: 16px; color: var(--royal-light); }
-    .example-card .user-says { background: var(--royal-dim); border-left: 3px solid var(--royal-light); padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 16px; }
-    .example-card .user-says::before { content: 'You:'; display: block; font-size: 12px; font-weight: 600; color: var(--royal-light); margin-bottom: 4px; }
-    .example-card .friday-does { background: var(--emerald-dim); border-left: 3px solid var(--emerald); padding: 12px 16px; border-radius: 0 8px 8px 0; }
-    .example-card .friday-does::before { content: 'Friday:'; display: block; font-size: 12px; font-weight: 600; color: var(--emerald); margin-bottom: 4px; }
-    .example-card ul { list-style: none; margin-top: 12px; }
-    .example-card li { padding: 6px 0; color: var(--text-secondary); font-size: 14px; display: flex; align-items: flex-start; gap: 8px; }
-    .example-card li::before { content: '→'; color: var(--emerald); font-weight: bold; }
-    .capabilities-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 32px; }
-    .capability-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
-    .capability-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-    .capability-card p { font-size: 14px; color: var(--text-secondary); }
-    .capability-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
-    .capability-icon.brain { background: var(--violet-dim); }
-    .capability-icon.tools { background: var(--royal-dim); }
-    .capability-icon.adapt { background: var(--emerald-dim); }
-    .capability-icon.learn { background: var(--amber-dim); }
     .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; }
     .value-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; text-align: center; }
+    .value-icon { width: 48px; height: 48px; margin: 0 auto 16px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+    .value-icon.royal { background: var(--royal-dim); }
+    .value-icon.emerald { background: var(--emerald-dim); }
+    .value-icon.violet { background: var(--violet-dim); }
     .value-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
     .value-card p { font-size: 14px; color: var(--text-secondary); }
+    .vision-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; margin-top: 40px; }
+    .vision-box h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--royal-light); }
+    .vision-box p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
     .cta-section { background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 48px; text-align: center; margin-top: 60px; }
     .cta-section h2 { font-size: 28px; font-weight: 700; margin-bottom: 16px; }
     .cta-section p { color: var(--text-secondary); margin-bottom: 24px; }
@@ -79,7 +63,7 @@
     footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; }
     footer p { color: var(--text-muted); font-size: 14px; }
     footer a { color: var(--text-secondary); text-decoration: none; }
-    @media (max-width: 768px) { .capabilities-grid, .values-grid { grid-template-columns: 1fr; } h1 { font-size: 36px; } }
+    @media (max-width: 768px) { .values-grid { grid-template-columns: 1fr; } h1 { font-size: 36px; } }
   </style>
 </head>
 <body>
@@ -96,167 +80,51 @@
   <main class="page-content">
     <div class="container">
       <div class="page-header">
-        <h1>The <span class="gradient-text">Vision</span></h1>
-        <p class="subtitle">Friday is Jarvis for your Mac. You talk to it, and it does everything you want on your computer. Not just simple stuff - literally everything.</p>
+        <h1>About <span class="gradient-text">Friday</span></h1>
+        <p class="subtitle">We're building the smartest way to organize your files. AI-powered, privacy-first, and designed for the way you actually work.</p>
       </div>
 
       <section class="content-section">
-        <h2>What is Friday?</h2>
-        <p>Friday is Iron Man's Jarvis, but on your Mac. You talk to it, and it does everything you want on your computer. Not just simple stuff - literally everything. But most importantly: it understands context and adapts.</p>
-        <p>Not a dumb script. An intelligent personal assistant that thinks, orchestrates, and executes complete workflows from A to Z.</p>
-
-        <div class="highlight-box">
-          <p>"Friday doesn't stop at 'making a presentation'. It thinks, adapts, and orchestrates the entire workflow, from A to Z."</p>
-        </div>
+        <h2>Our Mission</h2>
+        <p>We believe your files should organize themselves. That's why we built Friday - an AI assistant that understands your files and puts them exactly where they belong, automatically.</p>
+        <p>In a world where we create more digital content than ever, staying organized shouldn't feel like a chore. Friday uses advanced AI to analyze your files and create the perfect folder structure, without you lifting a finger.</p>
       </section>
 
       <section class="content-section">
-        <h2>Concrete Example</h2>
-
-        <div class="example-card">
-          <h3>"Friday, make me a presentation about Napoleon"</h3>
-          <div class="user-says">
-            "It's for high school, 10 min presentation, text + slides."
-          </div>
-          <div class="friday-does">
-            Friday executes the complete workflow:
-            <ul>
-              <li>Opens ChatGPT or Claude, generates the perfect prompt</li>
-              <li>Waits for the response, analyzes quality</li>
-              <li>Opens Pages (or Word, or installs LibreOffice if needed)</li>
-              <li>Automatically formats: titles, subtitles, structure, readable font</li>
-              <li>Creates the PowerPoint from the text</li>
-              <li>Sends everything by email as PDF</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="example-card">
-          <h3>"Friday, find me a dev internship in Strasbourg"</h3>
-          <div class="friday-does">
-            Friday asks the right questions, then:
-            <ul>
-              <li>Goes to LinkedIn, Indeed, Welcome to the Jungle</li>
-              <li>Creates an Excel with: Company, Position, Link, Salary</li>
-              <li>Offers to create your CV too</li>
-              <li>Sends everything organized to your inbox</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="example-card">
-          <h3>"Friday, compare iPhone 15 Pro prices"</h3>
-          <div class="friday-does">
-            <ul>
-              <li>Goes to Amazon, Fnac, Darty, Apple</li>
-              <li>Compiles prices, sorts them</li>
-              <li>Highlights the best deal in green</li>
-              <li>"Best price: Fnac, $1099, free delivery."</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="content-section">
-        <h2>What Makes Friday Revolutionary</h2>
-        <p>Friday is NOT a script. A script is "Go to Google, copy, paste." Friday is something entirely different:</p>
-
-        <div class="capabilities-grid">
-          <div class="capability-card">
-            <h4><span class="capability-icon brain">🧠</span> Contextual</h4>
-            <p>Understands context (level, usage, purpose). Asks the right questions before executing.</p>
-          </div>
-          <div class="capability-card">
-            <h4><span class="capability-icon tools">🔧</span> Orchestrator</h4>
-            <p>Uses multiple AIs and apps together. ChatGPT, Claude, Pages, Excel, Chrome - all at once.</p>
-          </div>
-          <div class="capability-card">
-            <h4><span class="capability-icon adapt">⚡</span> Adaptive</h4>
-            <p>Works with what's available. If you don't have PowerPoint, it finds an alternative.</p>
-          </div>
-          <div class="capability-card">
-            <h4><span class="capability-icon learn">📚</span> Learning</h4>
-            <p>Remembers your preferences. "Next time, less text in slides." It improves each time.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="content-section">
-        <h2>Friday = Intelligent Orchestrator</h2>
-        <p>Friday uses all tools intelligently:</p>
-        <ul style="list-style: none; margin-top: 16px;">
-          <li style="padding: 8px 0; color: var(--text-secondary);">🧠 <strong>ChatGPT / Claude / Perplexity</strong> → Writing & thinking</li>
-          <li style="padding: 8px 0; color: var(--text-secondary);">🗂 <strong>Pages / Word / Excel / PowerPoint</strong> → Documents & presentations</li>
-          <li style="padding: 8px 0; color: var(--text-secondary);">🔍 <strong>Google / YouTube</strong> → Research & tutorials</li>
-          <li style="padding: 8px 0; color: var(--text-secondary);">💻 <strong>VSCode / Terminal</strong> → Code & installation</li>
-          <li style="padding: 8px 0; color: var(--text-secondary);">📧 <strong>Gmail / Chrome</strong> → Communication & navigation</li>
-        </ul>
-        <p style="margin-top: 16px;">It knows what you have on your Mac, installs what's missing, and combines everything to achieve the result.</p>
-      </section>
-
-      <section class="content-section">
-        <h2>Adaptive Intelligence</h2>
-        <p>Friday adapts to YOU:</p>
-        <ul style="list-style: none; margin-top: 16px;">
-          <li style="padding: 8px 0; color: var(--text-secondary);">• If you're in high school → simple sources, academic format</li>
-          <li style="padding: 8px 0; color: var(--text-secondary);">• If you're a developer → clean code, commented, tested</li>
-          <li style="padding: 8px 0; color: var(--text-secondary);">• If you're a professional → formal tone, concrete data</li>
-        </ul>
-        <p style="margin-top: 16px;">And it learns: "Friday, use Claude instead of ChatGPT." "Always send as PDF." It remembers and improves each time.</p>
-      </section>
-
-      <section class="content-section">
-        <h2>The Final Vision</h2>
-        <p>Friday becomes your total personal assistant. While you work, it works in parallel.</p>
-
-        <div class="highlight-box">
-          <p>"Friday, while I code, prepare a doc on ethical AI."<br>
-          "Friday, plan my January study schedule."<br>
-          "Friday, do my weekly tech watch."</p>
-        </div>
-
-        <p>It executes complete workflows:</p>
-        <ul style="list-style: none; margin-top: 16px;">
-          <li style="padding: 8px 0; color: var(--text-secondary);">📰 Watch → Research → Summary → Email</li>
-          <li style="padding: 8px 0; color: var(--text-secondary);">📁 Client folder → Template → Data → PDF → Send</li>
-          <li style="padding: 8px 0; color: var(--text-secondary);">📅 Organization → Read emails → Calendar → Prioritization → Planning</li>
-        </ul>
-        <p style="margin-top: 16px;"><strong>You say what you want, it does everything.</strong></p>
-      </section>
-
-      <section class="content-section">
-        <h2>What Friday Must Be</h2>
+        <h2>Our Values</h2>
         <div class="values-grid">
           <div class="value-card">
-            <h3>Contextual</h3>
-            <p>Asks the right questions</p>
+            <div class="value-icon emerald">🔒</div>
+            <h3>Privacy First</h3>
+            <p>Your files never leave your Mac. All AI processing happens locally on your device.</p>
           </div>
           <div class="value-card">
-            <h3>Orchestrator</h3>
-            <p>Multiple AIs and apps together</p>
+            <div class="value-icon royal">⭐</div>
+            <h3>Excellence</h3>
+            <p>We obsess over every detail to deliver the best file organization experience possible.</p>
           </div>
           <div class="value-card">
-            <h3>Adaptive</h3>
-            <p>Works with what's available</p>
+            <div class="value-icon violet">✨</div>
+            <h3>Simplicity</h3>
+            <p>Powerful AI, simple experience. One click and your files are organized.</p>
           </div>
-          <div class="value-card">
-            <h3>Multi-step</h3>
-            <p>Executes complete workflows</p>
-          </div>
-          <div class="value-card">
-            <h3>Autonomous</h3>
-            <p>You say the goal, it handles it</p>
-          </div>
-          <div class="value-card">
-            <h3>Professional</h3>
-            <p>Clear, clean output, ready to use</p>
-          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>The Vision</h2>
+        <p>Friday V2 is just the beginning. Today, we organize your files. Tomorrow, we aim to build something bigger - an AI assistant that truly understands how you work and helps you be more productive.</p>
+        <p>We're starting with file organization because it's a problem everyone faces. But our ambition goes further: to create an intelligent assistant that learns your preferences and helps with everyday tasks on your Mac.</p>
+
+        <div class="vision-box">
+          <h3>What's Next</h3>
+          <p>We're constantly improving Friday's AI to better understand your files. Future updates will bring smarter categorization, custom organization rules, and deeper integration with macOS. Stay tuned.</p>
         </div>
       </section>
 
       <div class="cta-section">
-        <h2>Your Digital Executive Brain</h2>
-        <p>Friday is Jarvis for your Mac. You say what you want. It understands, asks the right questions, uses all necessary tools, and delivers a professional final result.</p>
+        <h2>Try Friday Today</h2>
+        <p>Transform your messy desktop into perfectly organized folders in seconds.</p>
         <a href="https://github.com/Nick0-ai/friday-app/releases/latest/download/Friday-1.0.12-mac-arm64.dmg" class="btn">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
           Download for Mac
