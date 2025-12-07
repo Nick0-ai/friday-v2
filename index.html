@@ -2318,22 +2318,20 @@
       .demo-sidebar { display: none; }
     }
 
-    /* Product Hunt Badge (small, inline) */
-    .ph-badge {
-      margin-top: 12px;
+    /* Product Hunt Button (next to Download) */
+    .ph-btn {
+      display: inline-flex;
+      align-items: center;
+      transition: transform 0.2s ease, opacity 0.2s ease;
     }
-    .ph-badge a {
-      display: inline-block;
-      opacity: 0.85;
-      transition: opacity 0.2s ease;
+    .ph-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
     }
-    .ph-badge a:hover {
-      opacity: 1;
-    }
-    .ph-badge img {
-      height: 32px;
+    .ph-btn img {
+      height: 52px;
       width: auto;
-      border-radius: 6px;
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -2375,11 +2373,6 @@
       </div>
       <span class="badge-text-accent">Now available</span> for macOS
     </div>
-    <div class="ph-badge">
-      <a href="https://www.producthunt.com/products/friday-v2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-friday&#0045;v2" target="_blank">
-        <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1047367&theme=dark&t=1765145937001" alt="Friday V2 on Product Hunt" />
-      </a>
-    </div>
 
     <h1>Your files, perfectly<br><span class="gradient-text">organized by AI</span></h1>
 
@@ -2396,7 +2389,9 @@
         </svg>
         Download for macOS
       </a>
-      <a href="#how-it-works" class="btn btn-secondary">See how it works</a>
+      <a href="https://www.producthunt.com/products/friday-v2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-friday&#0045;v2" target="_blank" class="ph-btn">
+        <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1047367&theme=light&t=1765146452998" alt="Friday V2 on Product Hunt" />
+      </a>
     </div>
 
     <div class="hero-stats">
