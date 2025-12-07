@@ -2320,23 +2320,31 @@
 
     /* Product Hunt Badge in CTA Section */
     .cta-ph {
-      margin-top: 24px;
+      margin-top: 20px;
       display: flex;
       justify-content: center;
     }
     .ph-cta-btn {
       display: inline-flex;
       align-items: center;
-      transition: transform 0.2s ease, opacity 0.2s ease;
+      gap: 8px;
+      padding: 10px 18px;
+      background: #000000;
+      border: 1px solid #1a1a24;
+      border-radius: 10px;
+      color: #a1a1aa;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
     }
     .ph-cta-btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
+      border-color: #FF6154;
+      color: #ffffff;
+      transform: translateY(-1px);
     }
-    .ph-cta-btn img {
-      height: 54px;
-      width: auto;
-      border-radius: 10px;
+    .ph-cta-btn svg {
+      flex-shrink: 0;
     }
   </style>
 </head>
@@ -3126,7 +3134,14 @@
           </a>
         </div>
         <div class="cta-ph">
-          <a href="https://www.producthunt.com/products/friday-v2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-friday&#0045;v2" target="_blank" class="ph-cta-btn"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1047367&theme=dark&t=1765146585866" alt="Friday V2 - Your Mac, finally organized. | Product Hunt" /></a>
+          <a href="https://www.producthunt.com/products/friday-v2" target="_blank" class="ph-cta-btn">
+            <svg width="20" height="20" viewBox="0 0 40 40" fill="none">
+              <path d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40Z" fill="#FF6154"/>
+              <path d="M22.5 20H17.5V12.5H22.5C24.575 12.5 26.25 14.175 26.25 16.25C26.25 18.325 24.575 20 22.5 20Z" fill="white"/>
+              <path d="M22.5 10H15V30H17.5V22.5H22.5C25.95 22.5 28.75 19.7 28.75 16.25C28.75 12.8 25.95 10 22.5 10Z" fill="white"/>
+            </svg>
+            Featured on Product Hunt
+          </a>
         </div>
       </div>
     </div>
