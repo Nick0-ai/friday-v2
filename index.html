@@ -2318,35 +2318,22 @@
       .demo-sidebar { display: none; }
     }
 
-    /* Product Hunt Banner */
-    .ph-banner {
-      position: fixed;
-      top: 80px;
-      right: 20px;
-      z-index: 1000;
-      opacity: 0.9;
-      transition: all 0.3s ease;
+    /* Product Hunt Badge (small, inline) */
+    .ph-badge {
+      margin-top: 12px;
     }
-    .ph-banner:hover {
+    .ph-badge a {
+      display: inline-block;
+      opacity: 0.85;
+      transition: opacity 0.2s ease;
+    }
+    .ph-badge a:hover {
       opacity: 1;
-      transform: scale(1.05);
     }
-    .ph-banner a {
-      display: block;
-    }
-    .ph-banner img {
-      display: block;
-      border-radius: 8px;
-    }
-    @media (max-width: 768px) {
-      .ph-banner {
-        position: relative;
-        top: 0;
-        right: 0;
-        text-align: center;
-        padding: 16px 0;
-        margin-top: 70px;
-      }
+    .ph-badge img {
+      height: 32px;
+      width: auto;
+      border-radius: 6px;
     }
   </style>
 </head>
@@ -2358,13 +2345,6 @@
     <div class="glow-orb glow-orb-3"></div>
   </div>
   <div class="grid-pattern"></div>
-
-  <!-- Product Hunt Banner -->
-  <div class="ph-banner">
-    <a href="https://www.producthunt.com/products/friday-v2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-friday&#0045;v2" target="_blank">
-      <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1047367&theme=dark&t=1765145937001" alt="Friday V2 - Your Mac, finally organized. | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" />
-    </a>
-  </div>
 
   <!-- Navigation -->
   <nav>
@@ -2394,6 +2374,11 @@
         </svg>
       </div>
       <span class="badge-text-accent">Now available</span> for macOS
+    </div>
+    <div class="ph-badge">
+      <a href="https://www.producthunt.com/products/friday-v2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-friday&#0045;v2" target="_blank">
+        <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1047367&theme=dark&t=1765145937001" alt="Friday V2 on Product Hunt" />
+      </a>
     </div>
 
     <h1>Your files, perfectly<br><span class="gradient-text">organized by AI</span></h1>
