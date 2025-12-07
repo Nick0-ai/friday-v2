@@ -2318,18 +2318,23 @@
       .demo-sidebar { display: none; }
     }
 
-    /* Product Hunt Button (next to Download) */
-    .ph-btn {
+    /* Product Hunt Badge in CTA Section */
+    .cta-ph {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+    }
+    .ph-cta-btn {
       display: inline-flex;
       align-items: center;
       transition: transform 0.2s ease, opacity 0.2s ease;
     }
-    .ph-btn:hover {
+    .ph-cta-btn:hover {
       transform: translateY(-2px);
       opacity: 0.9;
     }
-    .ph-btn img {
-      height: 52px;
+    .ph-cta-btn img {
+      height: 54px;
       width: auto;
       border-radius: 10px;
     }
@@ -2389,9 +2394,7 @@
         </svg>
         Download for macOS
       </a>
-      <a href="https://www.producthunt.com/products/friday-v2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-friday&#0045;v2" target="_blank" class="ph-btn">
-        <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1047367&theme=light&t=1765146452998" alt="Friday V2 on Product Hunt" />
-      </a>
+      <a href="#how-it-works" class="btn btn-secondary">See how it works</a>
     </div>
 
     <div class="hero-stats">
@@ -3121,6 +3124,9 @@
             </svg>
             View on GitHub
           </a>
+        </div>
+        <div class="cta-ph">
+          <a href="https://www.producthunt.com/products/friday-v2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-friday&#0045;v2" target="_blank" class="ph-cta-btn"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1047367&theme=dark&t=1765146585866" alt="Friday V2 - Your Mac, finally organized. | Product Hunt" /></a>
         </div>
       </div>
     </div>
