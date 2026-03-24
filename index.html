@@ -4,159 +4,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Friday is now 20n.</title>
-  <meta name="description" content="Friday started as an experiment — can a brain control a computer the way a human does? It worked. So we took it further. Friday is now 20n.">
+  <meta name="description" content="Friday evolved into 20n — the universal brain for robots.">
   <meta property="og:title" content="Friday is now 20n.">
-  <meta property="og:description" content="From pixels to robots. Friday evolved into 20n — the universal brain for physical bodies.">
-  <meta name="twitter:card" content="summary">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon2.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon2.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon2.png">
+  <meta property="og:description" content="From pixels to robots.">
+  <link rel="icon" type="image/png" href="favicon2.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=DM+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: #000;
       color: #fff;
-      line-height: 1.7;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .page {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 0 28px;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      align-items: center;
       justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* === HERO === */
-    .hero {
-      padding: 120px 0 48px;
-    }
-    .hero h1 {
-      font-size: clamp(36px, 6vw, 56px);
-      font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: clamp(16px, 2vw, 19px);
-      color: #a1a1aa;
-      line-height: 1.7;
-      max-width: 560px;
+    .content {
+      max-width: 520px;
     }
 
-    /* === DIVIDER === */
-    .sep {
-      width: 48px;
-      height: 1px;
-      background: #2a2a38;
-      margin: 48px 0;
-    }
-
-    /* === STORY === */
-    .story p {
-      font-size: clamp(15px, 1.8vw, 17px);
-      color: #a1a1aa;
-      line-height: 1.8;
+    h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(40px, 7vw, 64px);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
       margin-bottom: 24px;
     }
-    .story p:last-child { margin-bottom: 0; }
-    .story strong { color: #fff; font-weight: 600; }
 
-    /* === CTA === */
+    .sub {
+      font-family: 'DM Mono', 'Courier New', monospace;
+      font-size: 14px;
+      color: #71717a;
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+
     .cta {
-      padding: 56px 0 80px;
-      text-align: center;
-    }
-    .cta-btn {
       display: inline-block;
-      padding: 16px 48px;
-      background: #fff;
-      color: #000;
       font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      font-weight: 600;
+      font-size: 14px;
+      font-weight: 500;
+      color: #000;
+      background: #fff;
+      padding: 12px 36px;
       text-decoration: none;
-      letter-spacing: 0.02em;
-      transition: all 0.2s;
+      letter-spacing: 0.04em;
+      transition: opacity 0.2s;
     }
-    .cta-btn:hover {
-      background: #e4e4e7;
-      transform: translateY(-1px);
-    }
+    .cta:hover { opacity: 0.85; }
 
-    /* === FOOTER === */
     footer {
-      padding: 32px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 20px;
       text-align: center;
-      font-size: 13px;
-      color: #52525b;
-      border-top: 1px solid #1a1a24;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: #3f3f46;
     }
-    footer a {
-      color: #52525b;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    footer a:hover { color: #a1a1aa; }
+    footer a { color: #3f3f46; text-decoration: none; }
+    footer a:hover { color: #71717a; }
 
-    /* === FADE IN === */
-    .fade {
-      opacity: 0;
-      transform: translateY(12px);
-      animation: fadeUp 0.6s ease forwards;
-    }
-    .fade:nth-child(2) { animation-delay: 0.15s; }
-    .fade:nth-child(3) { animation-delay: 0.3s; }
-    .fade:nth-child(4) { animation-delay: 0.45s; }
-    .fade:nth-child(5) { animation-delay: 0.6s; }
-    .fade:nth-child(6) { animation-delay: 0.75s; }
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 600px) {
-      .page { padding: 0 20px; }
-      .hero { padding: 80px 0 36px; }
-      .cta { padding: 40px 0 60px; }
-    }
+    .fade { opacity: 0; transform: translateY(8px); animation: up 0.5s ease forwards; }
+    .d1 { animation-delay: 0.1s; }
+    .d2 { animation-delay: 0.25s; }
+    .d3 { animation-delay: 0.4s; }
+    @keyframes up { to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
 
-<div class="page">
-  <section class="hero fade">
-    <h1>Friday is now 20n.</h1>
-    <p>Friday started as an experiment — can a brain control a computer the way a human does, without APIs, without cloud, just vision and reasoning? It worked. So we took it further.</p>
-  </section>
-
-  <div class="sep fade"></div>
-
-  <section class="story">
-    <p class="fade"><strong>Friday was Phase 1.</strong> A local AI agent that controlled any Mac interface autonomously. 100% on-device, zero cloud. The goal wasn't file organization — it was proving that a brain could understand and act on a digital environment in real time.</p>
-    <p class="fade">That proof unlocked a bigger question: if the same architecture can control a screen, can it control a physical body?</p>
-    <p class="fade"><strong>The answer is 20n.</strong> Same thesis, same principles, moved from pixels to robots.</p>
-  </section>
-
-  <div class="sep fade"></div>
-
-  <section class="cta fade">
-    <a href="https://20n.dev" class="cta-btn">Discover 20n &rarr;</a>
-  </section>
+<div class="content">
+  <h1 class="fade">Friday is now 20n.</h1>
+  <p class="sub fade d1">Friday proved a brain could control a screen. Same architecture, bigger question. From pixels to robots.</p>
+  <a href="https://20n.dev" class="cta fade d2">Discover 20n &rarr;</a>
 </div>
 
-<footer>
-  <p>&copy; 2026 20n Research Laboratory &mdash; Paris &nbsp;&middot;&nbsp; <a href="https://20n.dev">20n.dev</a></p>
-</footer>
+<footer class="fade d3">20n Research Laboratory &middot; <a href="https://20n.dev">20n.dev</a></footer>
 
 </body>
 </html>
